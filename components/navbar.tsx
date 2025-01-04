@@ -6,8 +6,10 @@ import { useState } from "react";
 import { useEffect } from "react";
 import logo from "@/public/images/Group 17.png";
 import Image from "next/image";
+import { Menu, MenuIcon, X } from "lucide-react";
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -69,8 +71,62 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
+          <div className="flex items-center">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden text-white h-12 w-12"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <Menu size={48} />
+              <span className="sr-only">Menu</span>
+            </Button>
+          </div>
         </div>
       </div>
+      {/* 
+fixed inset-y-0 right-0 w-1/2 bg-white dark:bg-gray-900 shadow-lg z-20 
+transform transition-transform duration-300 ease-in-out */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-y-0 bg-black w-1/2 right-0 transfrom transtition-transform">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden absolute top-6 right-6 text-white"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <X className="w-8 h-8" />
+            <span className="sr-only">Close</span>
+          </Button>
+
+          <div className="px-4 py-6 pb-3 text-white space-y-1">
+            <Link
+              className="block px-3 py-3 font-medium hover:text-purple-700"
+              href="#home"
+            >
+              Home
+            </Link>
+            <Link
+              className="block px-3 py-3 font-medium hover:text-purple-700"
+              href="#why-us"
+            >
+              About
+            </Link>
+            <Link
+              className="block px-3 py-3 font-medium hover:text-purple-700"
+              href="#services"
+            >
+              Services
+            </Link>
+            <Link
+              className="block px-3 py-3 font-medium hover:text-purple-700"
+              href="#contact-us"
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
