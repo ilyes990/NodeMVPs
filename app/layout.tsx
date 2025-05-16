@@ -1,23 +1,45 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Poppins, Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import Navbar from "../components/navbar";
 
-const inter = Inter({ subsets: ["latin"] });
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+// Use local font fallback instead of Google fonts to avoid Turbopack issues
+const poppinsFont = localFont({
+  src: [
+    {
+      path: '../public/fonts/Poppins-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Poppins-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Poppins-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Poppins-ExtraBold.woff2',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Poppins-Black.woff2',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-poppins',
 });
 
+// No longer using Google fonts due to Turbopack compatibility issues
+
 export const metadata: Metadata = {
-  title: "MVP Agency",
-  description: "Turning Ideas into Impactful MVPs",
+  title: "Veyronix | Digital Solutions Agency",
+  description: "Turning ideas into reality with mobile apps, landing pages, and UI/UX design.",
 };
 
 export default function RootLayout({
@@ -27,7 +49,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} bg-white text-gray-900`}>
+      <body className={`${poppinsFont.className} bg-[#000122] text-gray-100 relative`}>
         <Navbar />
         {children}
       </body>

@@ -1,0 +1,25 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="75%" cy="0%" r="100%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect width="100%" height="100%" fill="url(#glow)"/>
+  
+  <g filter="url(#blur)" opacity="0.6">
+    <path d="M400,300 Q500,200 600,300 T800,300 T1000,300 T1200,300" fill="#ffffff" opacity="0.1"/>
+    <path d="M300,500 Q400,400 500,500 T700,500 T900,500 T1100,500" fill="#ffffff" opacity="0.1"/>
+    <path d="M500,700 Q600,600 700,700 T900,700 T1100,700 T1300,700" fill="#ffffff" opacity="0.1"/>
+  </g>
+</svg>
