@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Navbar from "../components/navbar";
 import { ReactNode } from "react";
-import Head from "next/head";
 import Footer from "@/components/footer";
 
 // Use local font fallback instead of Google fonts to avoid Turbopack issues
