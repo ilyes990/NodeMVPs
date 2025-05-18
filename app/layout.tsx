@@ -1,7 +1,10 @@
 import "./globals.css";
+import "./font-optimization.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Navbar from "../components/navbar";
+import { ReactNode } from "react";
+import Head from "next/head";
 
 // Use local font fallback instead of Google fonts to avoid Turbopack issues
 const poppinsFont = localFont({
@@ -33,6 +36,8 @@ const poppinsFont = localFont({
     },
   ],
   variable: '--font-poppins',
+  display: 'swap', // Ensure text remains visible during font loading
+  preload: true,   // Preload the font files
 });
 
 // No longer using Google fonts due to Turbopack compatibility issues
@@ -45,11 +50,34 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${poppinsFont.className} bg-[#000122] text-gray-100 relative`}>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Preload critical fonts */}
+        <link 
+          rel="preload" 
+          href="/fonts/Poppins-Regular.woff2" 
+          as="font" 
+          type="font/woff2" 
+          crossOrigin="anonymous" 
+        />
+        <link 
+          rel="preload" 
+          href="/fonts/Poppins-Bold.woff2" 
+          as="font" 
+          type="font/woff2" 
+          crossOrigin="anonymous" 
+        />
+        {/* Preload critical images */}
+        <link 
+          rel="preload" 
+          href="/images/sky.jpg" 
+          as="image" 
+        />
+      </head>
+      <body className={`${poppinsFont.className}  text-gray-100 relative`}>
         <Navbar />
         {children}
       </body>

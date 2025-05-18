@@ -2,24 +2,32 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { useEffect } from "react";
-
+import { useState, useEffect } from "react";
 import { Menu, X, Calendar } from "lucide-react";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [isBrowser, setIsBrowser] = useState(false);
+
+  // Set isBrowser to true once component mounts
+  useEffect(() => {
+    setIsBrowser(true);
+  }, []);
 
   useEffect(() => {
+    if (!isBrowser) return;
+    
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
+    
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isBrowser]);
 
-  const opacity = Math.min(scrollY / 100, 1);
+  // Use 0 as default opacity for server-side rendering
+  const opacity = isBrowser ? Math.min(scrollY / 100, 1) : 0;
   return (
     <nav
       className="fixed w-full z-50 transition-colors duration-3000"

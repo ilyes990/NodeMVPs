@@ -1,0 +1,24 @@
+/* Font optimization styles */
+
+/* Ensure text is visible during font loading */
+html {
+  font-display: swap;
+  text-rendering: optimizeSpeed;
+}
+
+/* Apply font-display: swap to all text elements */
+h1, h2, h3, h4, h5, h6, p, span, a, button, li {
+  font-display: swap;
+}
+
+/* Optimize text rendering */
+.text-transparent {
+  will-change: opacity;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent text from being invisible during font loading */
+@font-face {
+  font-display: swap;
+}

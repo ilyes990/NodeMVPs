@@ -17,7 +17,7 @@ import AnimateOnScroll from "@/components/blocks/animate-on-scroll";
 
 export default function Home() {
   return (
-    <main className="min-h-screen from-indigo-950 via-indigo-900 to-indigo-950">
+    <main className="min-h-screen" style={{ background: "linear-gradient(to bottom, #000622, #000622 50%, #0d1534 100%)" }}>
       {/* Hero Section */}
       <AnimateOnScroll>
       <section
@@ -25,16 +25,17 @@ export default function Home() {
         id="hero"
       >
         <div className="absolute inset-0">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: 'url("/images/sky.jpg")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          />
+          <div className="w-full h-full relative">
+            <Image
+              src="/images/sky.jpg"
+              alt="Sky background"
+              fill
+              priority
+              className="object-cover"
+            />
+          </div>
           <div className="absolute inset-0 bg-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#000122] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#081020] to-transparent" />
         </div>
         <div className="w-full max-w-4xl flex flex-col items-center gap-12 my-40 relative z-10">
           <div className="text-center max-w-5xl">
@@ -72,7 +73,7 @@ export default function Home() {
  
 
       {/* Services Section */}
-      <section className="py-20 px-8" id="services">
+      <section className="py-20 px-8 bg-[#081020]" id="services">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
@@ -88,10 +89,10 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-indigo-950 bg-opacity-70 border border-indigo-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 group">
+            <Card className="bg-[#0d1534] bg-opacity-70 border border-[#0d1534]/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 group">
               <CardContent className="p-8 flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-indigo-900/50 flex items-center justify-center mb-6 group-hover:bg-yellow-400 transition-colors duration-300">
-                  <Smartphone className="h-8 w-8 text-yellow-300 group-hover:text-indigo-950" />
+                <div className="w-16 h-16 rounded-full bg-[#0d1534]/50 flex items-center justify-center mb-6 group-hover:bg-yellow-400 transition-colors duration-300">
+                  <Smartphone className="h-8 w-8 text-yellow-300 group-hover:text-[#0d1534]" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-white">
                   MVP SaaS
@@ -102,10 +103,10 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="bg-indigo-950 bg-opacity-70 border border-indigo-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 group">
+            <Card className="bg-[#0d1534] bg-opacity-70 border border-[#0d1534] backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 group">
               <CardContent className="p-8 flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-indigo-900/50 flex items-center justify-center mb-6 group-hover:bg-yellow-400 transition-colors duration-300">
-                  <Layout className="h-8 w-8 text-yellow-300 group-hover:text-indigo-950" />
+                <div className="w-16 h-16 rounded-full bg-[#0d1534]/50 flex items-center justify-center mb-6 group-hover:bg-yellow-400 transition-colors duration-300">
+                  <Layout className="h-8 w-8 text-yellow-300 group-hover:text-[#0d1534]" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-white">
                   Landing Page Design
@@ -117,9 +118,9 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="bg-indigo-950 bg-opacity-70 border border-indigo-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 group">
+            <Card className="bg-[#0d1534] bg-opacity-70 border border-[#0d1534] backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 group">
               <CardContent className="p-8 flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-indigo-900/50 flex items-center justify-center mb-6 group-hover:bg-yellow-400 transition-colors duration-300">
+                <div className="w-16 h-16 rounded-full bg-[#0d1534]/50 flex items-center justify-center mb-6 group-hover:bg-yellow-400 transition-colors duration-300">
                   <Code className="h-8 w-8 text-yellow-300 group-hover:text-indigo-950" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-white">
@@ -134,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 px-8 bg-[#000122]" id="why-us">
+      <section className="py-20 px-8 bg-[#081020]" id="why-us">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
@@ -190,14 +191,14 @@ export default function Home() {
             ].map((item, i) => (
               <Card
                 key={i}
-                className="bg-indigo-950 bg-opacity-70 border border-indigo-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300"
+                className="bg-[#0d153400] bg-opacity-70 border border-indigo-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300"
               >
                 <CardContent className="p-6 flex items-start">
                   <div className="mr-4 mt-1 bg-indigo-900/30 p-2 rounded-full">
                     {item.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2 text-white">
+                    <h3 className="text-xl font-medium mb-2 text-white">
                       {item.title}
                     </h3>
                     <p className="text-gray-300">{item.description}</p>
@@ -210,7 +211,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 px-8" id="portfolio">
+      <section className="py-20 px-8 bg-[#081020]" id="portfolio">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
@@ -225,21 +226,21 @@ export default function Home() {
             <h3 className="text-2xl font-bold mb-8 text-white">MVP Projects</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <ProjectCard
-                title="Fitness App"
+                title="Dream-to-plan"
                 category="MVP"
-                description="A mobile-first fitness tracking application with workout plans and progress analytics."
+                description="A user-friendly MVP for tracking and managing your dreams."
                 imageSrc="/images/mvp/Group 45830.jpg"
               />
               <ProjectCard
-                title="Finance Dashboard"
+                title="AdvenHive"
                 category="MVP"
-                description="Interactive financial dashboard with real-time data visualization and reporting."
+                description="A mobile app for planning adventures with AI-driven suggestions."
                 imageSrc="/images/mvp/Group 32.png"
               />
               <ProjectCard
-                title="E-commerce Platform"
+                title="Peeps"
                 category="MVP"
-                description="Custom e-commerce solution with product management and checkout flow."
+                description="A social media platform with features like user profiles, posts, and comments."
                 imageSrc="/images/mvp/GqqCNRjW4AAcp5x.jpeg"
               />
             </div>
@@ -272,7 +273,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 px-8" id="pricing">
+      <section className="py-20 px-8 bg-[#081020]" id="pricing">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
@@ -451,7 +452,7 @@ export default function Home() {
 
 
       {/* Meet The Founder Section */}
-      <section className="py-20 px-8 bg-[#000122]" id="founder">
+      <section className="py-20 px-8 bg-[#081020]" id="founder">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
@@ -465,7 +466,7 @@ export default function Home() {
                 alt="Ilyes - Founder of Veyronix"
                 fill
                 className="object-cover"
-                priority
+                loading="lazy"
               />
             </div>
             <div className="flex-1 max-w-2xl">
