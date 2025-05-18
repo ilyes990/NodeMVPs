@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import Navbar from "../components/navbar";
 import { ReactNode } from "react";
 import Head from "next/head";
+import Footer from "@/components/footer";
 
 // Use local font fallback instead of Google fonts to avoid Turbopack issues
 const poppinsFont = localFont({
@@ -76,10 +77,12 @@ export default function RootLayout({
           href="/images/sky.jpg" 
           as="image" 
         />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
       </head>
       <body className={`${poppinsFont.className}  text-gray-100 relative`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
