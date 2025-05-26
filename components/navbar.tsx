@@ -1,158 +1,37 @@
 "use client";
 
-import Link from "next/link";
+import { NavBar } from "@/components/ui/tubelight-navbar";
+import { Home, Briefcase, Phone, Zap, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
-import { Menu, X, Calendar } from "lucide-react";
+import Link from "next/link";
 import Image from 'next/image';
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-  const [isBrowser, setIsBrowser] = useState(false);
+  const navItems = [
+    { name: 'Services', url: '#services', icon: Zap },
+    { name: 'Why Us', url: '#why-us', icon: Home },
+    { name: 'Portfolio', url: '#portfolio', icon: Briefcase },
+    { name: 'Contact', url: '#contact-us', icon: Phone }
+  ];
 
-  // Set isBrowser to true once component mounts
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isBrowser) return;
-    
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isBrowser]);
-
-  // Use 0 as default opacity for server-side rendering
-  const opacity = isBrowser ? Math.min(scrollY / 100, 1) : 0;
   return (
-    <nav
-      className="fixed w-full z-50 transition-colors duration-3000"
-      style={{
-        backgroundColor: `rgba(0, 1, 34, ${opacity})`,
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-white">
-              <Image src="/images/Logo.png" alt="Logo" width={200} height={100} />
-            </Link>
-          </div>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <Link
-                href="#services"
-                className="text-white hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                SERVICES
-              </Link>
-              <Link
-                href="#why-us"
-                className="text-white hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                WHY US
-              </Link>
-              <Link
-                href="#projects"
-                className="text-white hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                PORTFOLIO
-              </Link>
-              <Link
-                href="#contact-us"
-                className="text-white hover:text-yellow-400 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                CONTACT
-              </Link>
-            </div>
-          </div>
-          <div className="flex items-center">
-            <Button
-              className="hidden md:flex bg-yellow-400 hover:bg-yellow-500 text-indigo-950 font-semibold rounded-full"
-            >
-              Book a free call
-              <Calendar className="ml-2 h-4 w-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden text-white h-12 w-12"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              <Menu size={24} />
-              <span className="sr-only">Menu</span>
-            </Button>
-          </div>
-        </div>
-      </div>
+    // Top spacing is controlled by the 'py-4' class below
+    <div className="fixed w-full z-50 flex justify-center items-center px-4 sm:px-6 lg:px-8 py-5 mt-2">
+      <Link href="/" className="absolute left-4 sm:left-6 lg:left-8">
+        <Image src="/images/Logo.png" alt="Logo" width={200} height={100} />
+      </Link>
       
-      {isMobileMenuOpen && (
-        <div className="fixed inset-y-0 bg-indigo-950/95 backdrop-blur-sm w-full right-0 transform transition-transform z-[100]">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-6 right-6 text-white"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <X className="w-8 h-8" />
-            <span className="sr-only">Close</span>
-          </Button>
+      <div className="flex items-center gap-4">
+        <NavBar items={navItems} />
+      </div>
 
-          <div className="flex flex-col items-center justify-center h-full text-white space-y-8">
-            <Link
-              className="text-2xl font-medium hover:text-yellow-400"
-              href="/"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              HOME
-            </Link>
-            <Link
-              className="text-2xl font-medium hover:text-yellow-400"
-              href="#services"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              SERVICES
-            </Link>
-            <Link
-              className="text-2xl font-medium hover:text-yellow-400"
-              href="#why-us"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              WHY US
-            </Link>
-            <Link
-              className="text-2xl font-medium hover:text-yellow-400"
-              href="#projects"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              PORTFOLIO
-            </Link>
-            <Link
-              className="text-2xl font-medium hover:text-yellow-400"
-              href="#contact-us"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              CONTACT
-            </Link>
-            <a href='https://calendly.com/ilyes-sissaoui/30mi'>
-            <Button
-              className="mt-4 bg-yellow-400 hover:bg-yellow-500 text-indigo-950 font-semibold px-8 py-6 text-lg rounded-full"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Book a free call
-              <Calendar className="ml-2 h-5 w-5" />
-            </Button>
-            </a>
-           
-          </div>
-        </div>
-      )}
-    </nav>
+      <Link href="https://calendly.com/ilyes-sissaoui/30min" className="hidden md:block absolute right-4 sm:right-6 lg:right-8">
+        <Button className="bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-semibold rounded-full">
+          Book a free call
+          <Calendar className="ml-2 h-4 w-4" />
+        </Button>
+      </Link>
+    </div>
   );
 };
 

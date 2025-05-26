@@ -14,10 +14,11 @@ import {
   ArrowUp,
 } from "lucide-react";
 import AnimateOnScroll from "@/components/blocks/animate-on-scroll";
+import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects";
 
 export default function Home() {
   return (
-    <main className="min-h-screen" style={{ background: "linear-gradient(to bottom, #000622, #000622 50%, #0d1534 100%)" }}>
+    <main className="min-h-screen bg-[#0d1534]">
       {/* Hero Section */}
       <AnimateOnScroll>
       <section
@@ -35,7 +36,7 @@ export default function Home() {
             />
           </div>
           <div className="absolute inset-0 bg-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#081020] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1534] to-transparent" />
         </div>
         <div className="w-full max-w-4xl flex flex-col items-center gap-12 my-40 relative z-10">
           <div className="text-center max-w-5xl">
@@ -73,7 +74,7 @@ export default function Home() {
  
 
       {/* Services Section */}
-      <section className="py-20 px-8 bg-[#081020]" id="services">
+      <section className="py-20 px-8" id="services">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
@@ -135,7 +136,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 px-8 bg-[#081020]" id="why-us">
+      <section className="py-20 px-8" id="why-us">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
@@ -149,69 +150,12 @@ export default function Home() {
               exceptional digital solutions
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Zap className="h-6 w-6 text-yellow-400" />,
-                title: "Fast Delivery",
-                description:
-                  "We work efficiently to deliver your projects on time without compromising quality.",
-              },
-              {
-                icon: <Users className="h-6 w-6 text-yellow-400" />,
-                title: "Client-Focused Approach",
-                description:
-                  "Your vision and goals are at the center of everything we create.",
-              },
-              {
-                icon: <CheckCircle className="h-6 w-6 text-yellow-400" />,
-                title: "Quality Assurance",
-                description:
-                  "Rigorous testing ensures your digital products work flawlessly across all devices.",
-              },
-              {
-                icon: <Layout className="h-6 w-6 text-yellow-400" />,
-                title: "Modern Design",
-                description:
-                  "Sleek, contemporary aesthetics that align with current design trends and best practices.",
-              },
-              {
-                icon: <Smartphone className="h-6 w-6 text-yellow-400" />,
-                title: "Mobile-First Approach",
-                description:
-                  "Optimized experiences for the devices your customers use most.",
-              },
-              {
-                icon: <Code className="h-6 w-6 text-yellow-400" />,
-                title: "Clean Code",
-                description:
-                  "Well-structured, maintainable code that scales with your business needs.",
-              },
-            ].map((item, i) => (
-              <Card
-                key={i}
-                className="bg-[#0d153400] bg-opacity-70 border border-indigo-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300"
-              >
-                <CardContent className="p-6 flex items-start">
-                  <div className="mr-4 mt-1 bg-indigo-900/30 p-2 rounded-full">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-medium mb-2 text-white">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-300">{item.description}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <FeaturesSectionWithHoverEffects />
         </div>
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 px-8 bg-[#081020]" id="portfolio">
+      <section className="py-20 px-8" id="portfolio">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
@@ -273,7 +217,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 px-8 bg-[#081020]" id="pricing">
+      <section className="py-20 px-8" id="pricing">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
@@ -308,7 +252,7 @@ export default function Home() {
                   <div className="mb-6">
                     <span className="text-gray-400 text-sm">Starting from</span>
                     <div className="text-4xl font-bold text-yellow-400">
-                      $1,200
+                      $2,200
                     </div>
                   </div>
                 </div>
@@ -452,7 +396,7 @@ export default function Home() {
 
 
       {/* Meet The Founder Section */}
-      <section className="py-20 px-8 bg-[#081020]" id="founder">
+      <section className="py-20 px-8" id="founder">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
