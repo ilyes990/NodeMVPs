@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { usePathname } from 'next/navigation'
 
 interface NavItem {
   name: string
@@ -19,9 +18,6 @@ interface NavBarProps {
 }
 
 export function NavBar({ items, className }: NavBarProps) {
-  const pathname = usePathname()
-  const [isMobile, setIsMobile] = useState(false)
-  
   // Determine active tab based on current URL hash
   const getActiveTab = () => {
     if (typeof window === 'undefined') return items[0].name
@@ -38,7 +34,7 @@ export function NavBar({ items, className }: NavBarProps) {
     }
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
+      // Remove unused isMobile state
     }
 
     handleResize()
@@ -49,7 +45,7 @@ export function NavBar({ items, className }: NavBarProps) {
       window.removeEventListener("resize", handleResize)
       window.removeEventListener("hashchange", handleHashChange)
     }
-  }, [])
+  }, [getActiveTab]) // Add getActiveTab to dependency array
 
   return (
     <div
