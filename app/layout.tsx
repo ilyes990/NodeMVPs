@@ -6,7 +6,7 @@ import Navbar from "../components/navbar";
 import { ReactNode } from "react";
 import Footer from "@/components/footer";
 
-// Use local font fallback instead of Google fonts to avoid Turbopack issues
+// Use local font files
 const poppinsFont = localFont({
   src: [
     {
@@ -36,15 +36,14 @@ const poppinsFont = localFont({
     },
   ],
   variable: '--font-poppins',
-  display: 'swap', // Ensure text remains visible during font loading
-  preload: true,   // Preload the font files
+  display: 'swap',
+  preload: true,
 });
-
-// No longer using Google fonts due to Turbopack compatibility issues
 
 export const metadata: Metadata = {
   title: "Veyronix | Digital Solutions Agency",
   description: "Turning ideas into reality with mobile apps, landing pages, and UI/UX design.",
+  metadataBase: new URL('https://www.veyronixlabs.com'),
 };
 
 export default function RootLayout({
@@ -53,32 +52,24 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${poppinsFont.variable} font-sans`}>
       <head>
-        {/* Preload critical fonts */}
-        <link 
-          rel="preload" 
-          href="/fonts/Poppins-Regular.woff2" 
-          as="font" 
-          type="font/woff2" 
-          crossOrigin="anonymous" 
+        <link
+          rel="preload"
+          href="/fonts/Poppins-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
         />
-        <link 
-          rel="preload" 
-          href="/fonts/Poppins-Bold.woff2" 
-          as="font" 
-          type="font/woff2" 
-          crossOrigin="anonymous" 
+        <link
+          rel="preload"
+          href="/fonts/Poppins-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
         />
-        {/* Preload critical images */}
-        <link 
-          rel="preload" 
-          href="/images/sky.jpg" 
-          as="image" 
-        />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
       </head>
-      <body className={`${poppinsFont.className}  text-gray-100 relative`}>
+      <body className="min-h-screen bg-background font-sans antialiased">
         <Navbar />
         {children}
         <Footer />
