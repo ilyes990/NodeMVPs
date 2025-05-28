@@ -18,11 +18,11 @@ import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0d1534]">
+    <main className="min-h-screen bg-[#020820]">
       {/* Hero Section */}
       <AnimateOnScroll>
       <section
-        className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-20 relative overflow-hidden"
+        className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-20 relative overflow-visible"
         id="hero"
       >
         <div className="absolute inset-0">
@@ -35,8 +35,8 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-          <div className="absolute inset-0 bg-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1534] to-transparent" />
+          <div className="absolute inset-0 bg-[#020820]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#020820] via-[#010a2e] to-[#010a2e61]" />
         </div>
         <div className="w-full max-w-4xl flex flex-col items-center gap-12 my-40 relative z-10">
           <div className="text-center max-w-5xl">
@@ -172,8 +172,20 @@ export default function Home() {
               <ProjectCard
                 title="Dream-to-plan"
                 category="MVP"
-                description="A user-friendly MVP for tracking and managing your dreams."
-                imageSrc="/images/mvp/Group 45830.jpg"
+                description="A goal-setting app that transforms user dreams into actionable step-by-step plans instantly. Just enter your goal and get a personalized roadmap to start achieving today"
+                imageSrc="/images/dream_to_plan.png"
+              />
+               <ProjectCard
+                title="DocuAlert"
+                category="MVP"
+                description="DocuAlert is a robust document management and expiration tracking solution designed to ensure organizations never miss a critical deadline. It provides secure storage and automated email reminders for expiring documents such as contracts, licenses, and certifications."
+                imageSrc="/images/docuAlert.jpg"
+              />
+              <ProjectCard
+                title="WebAgency CRM"
+                category="MVP"
+                description="Manage leads, projects, and team collaboration all in one place. Built specifically for web design agencies to boost productivity and grow their business."
+                imageSrc="/images/crm.jpg"
               />
               <ProjectCard
                 title="AdvenHive"
@@ -187,6 +199,7 @@ export default function Home() {
                 description="A social media platform with features like user profiles, posts, and comments."
                 imageSrc="/images/mvp/GqqCNRjW4AAcp5x.jpeg"
               />
+             
             </div>
           </div>
 
