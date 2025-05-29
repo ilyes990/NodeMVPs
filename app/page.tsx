@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects";
 import {
-  ArrowUp,
-  Calendar,
-  Check,
-  Code,
-  Layout,
-  Smartphone,
+    ArrowUp,
+    Calendar,
+    Check,
+    Code,
+    Layout,
+    Smartphone,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
