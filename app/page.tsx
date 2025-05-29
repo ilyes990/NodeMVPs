@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects";
 import {
-    ArrowUp,
-    Calendar,
-    Check,
-    Code,
-    Layout,
-    Smartphone,
+  ArrowUp,
+  Calendar,
+  Check,
+  Code,
+  Layout,
+  Smartphone,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -136,6 +136,7 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section className="py-20 px-8" id="why-us">
         <div className="max-w-6xl mx-auto">
+        <AnimateOnScroll>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
               Why Choose{" "}
@@ -148,6 +149,7 @@ export default function Home() {
               exceptional digital solutions
             </p>
           </div>
+          </AnimateOnScroll>
           <FeaturesSectionWithHoverEffects />
         </div>
       </section>
@@ -163,7 +165,8 @@ export default function Home() {
               See examples of our work in MVP development and landing page design
             </p>
           </div>
-
+          
+          <AnimateOnScroll>
           <div className="mb-16">
             <h3 className="text-2xl font-bold mb-8 text-white">MVP Projects</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -200,7 +203,7 @@ export default function Home() {
              
             </div>
           </div>
-
+          </AnimateOnScroll>
           <div>
             <h3 className="text-2xl font-bold mb-8 text-white">Landing Pages</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
