@@ -1,10 +1,10 @@
-import "./globals.css";
-import "./font-optimization.css";
+import Footer from "@/components/footer";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Navbar from "../components/navbar";
 import { ReactNode } from "react";
-import Footer from "@/components/footer";
+import Navbar from "../components/navbar";
+import "./font-optimization.css";
+import "./globals.css";
 
 // Use local font files
 const poppinsFont = localFont({
@@ -52,8 +52,8 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en" className={`${poppinsFont.variable} font-sans`}>
-      <head>
+    <html lang="en" className={`${poppinsFont.variable} font-sans`} suppressHydrationWarning>
+      <head> 
         <link
           rel="preload"
           href="/fonts/Poppins-Regular.woff2"

@@ -1,19 +1,25 @@
-import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+"use client";
+import AnimateOnScroll from "@/components/blocks/animate-on-scroll";
 import { ProjectCard } from "@/components/project-card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects";
 import {
-  Code,
-  Smartphone,
-  Layout,
+  ArrowUp,
   Calendar,
   Check,
-  ArrowUp,
+  Code,
+  Layout,
+  Smartphone,
 } from "lucide-react";
-import AnimateOnScroll from "@/components/blocks/animate-on-scroll";
-import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+
   return (
     <main className="min-h-screen bg-[#020820]">
       {/* Hero Section */}
@@ -46,22 +52,17 @@ export default function Home() {
               Build. Launch. Grow.
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300">
-              Whether it&apos;s a landing page or a full MVP, We craft clean, modern designs that help you go live faster and convert better.
+              We turn your idea into full MVPs in weeks with clean, modern designs that help you launch faster, test smarter, and grow confidently.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://calendly.com/ilyes-sissaoui/30mi">
-              <Button className="bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-semibold px-8 py-6 text-lg rounded-full">
+              <Button className="bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-medium px-8 py-6 text-lg rounded-full">
                 Book a free call
                 <Calendar className="ml-2 h-5 w-5" />
               </Button>
               </a>
     
-              <Button
-                variant="outline"
-                className="border-yellow-400 text-yellow-400  px-8 py-6 text-lg rounded-full"
-              >
-                Our Work
-              </Button>
+            
             </div>
           </div>
          
@@ -245,24 +246,19 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* MVP Development */}
             <Card className="bg-blue-950 bg-opacity-70 border border-yellow-400  backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 flex flex-col h-full">
-              <div className="absolute top-0 right-0">
-                <div className="bg-yellow-400 text-blue-950 font-semibold py-1 px-4 text-sm transform rotate-45 translate-x-2 translate-y-3 shadow-lg">
-                  Popular
-                </div>
-              </div>
+              
               <CardContent className="p-8 flex flex-col flex-grow">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2 text-white">
-                    MVP Development
+                    Starter MVP
                   </h3>
                   <p className="text-gray-300 mb-6">
-                    Transform your concept into a functional minimum viable
-                    product
+                  Perfect for startups or individuals looking to validate one core feature with minimal investment.
                   </p>
                   <div className="mb-6">
                     <span className="text-gray-400 text-sm">Starting from</span>
                     <div className="text-4xl font-bold text-yellow-400">
-                      $2,200
+                      $1,200
                     </div>
                   </div>
                 </div>
@@ -270,13 +266,12 @@ export default function Home() {
                 <div className="flex-grow mb-8">
                   <ul className="space-y-3">
                     {[
-                      "Complete MVP development in 30 days",
-                      "Mobile & Pwa version",
-                      "Basic UI/UX design",
+                      "1 Main Feature",
+                      "Simple UI (1–3 Screens)",
+                      "Backend integration",
                       "Moden and scalable tech stack",
-                      "Responsive design",
-                      "Auth & Database integration",
-                      "30 days of free maintenance",
+                      "Cross-platform support",
+                      "Delivery: 1–2 weeks",
                     ].map((feature, i) => (
                       <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" />
@@ -296,19 +291,24 @@ export default function Home() {
             </Card>
 
             {/* Landing Page Design */}
-            <Card className="bg-blue-950 bg-opacity-70 border border-blue-800/30 backdrop-blur-sm transition-all duration-300 flex flex-col h-full relative overflow-hidden">
+            <Card className="bg-blue-950 bg-opacity-70 border border-blue-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 flex flex-col h-full">
+            <div className="absolute top-0 right-0">
+                <div className="bg-yellow-400 text-blue-950 font-semibold py-1 px-4 text-sm transform rotate-45 translate-x-2 translate-y-3 shadow-lg">
+                  Popular
+                </div>
+              </div>
               <CardContent className="p-8 flex flex-col flex-grow">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2 text-white">
-                    Landing Page Design
+                     Growth MVP
                   </h3>
                   <p className="text-gray-300 mb-6">
-                    High-converting landing pages that drive customer action
+                  For those who want a bit more covering multiple features with a polished look and better user experience.
                   </p>
                   <div className="mb-6">
                     <span className="text-gray-400 text-sm">Starting from</span>
                     <div className="text-4xl font-bold text-yellow-400">
-                      $200
+                      $3,000
                     </div>
                   </div>
                 </div>
@@ -316,12 +316,12 @@ export default function Home() {
                 <div className="flex-grow mb-8">
                   <ul className="space-y-3">
                     {[
-                      "Custom design & branding",
-                      "Responsive for all devices",
-                      "SEO optimization",
-                      "Call-to-action optimization",
-                      "Analytics integration",
-                      "Fast loading speed",
+                      "2–4 Core Features",
+                      "Custom UI/UX Design (up to 6 screens)",
+                      "Backend + API Integration",
+                      "Admin Panel (basic)",
+                      "Cross-platform support",
+                      "Delivery: 3–4 weeks",
                     ].map((feature, i) => (
                       <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" />
@@ -414,38 +414,41 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="w-64 h-64 relative rounded-full overflow-hidden border-4 border-yellow-400">
-              <Image
-                src="/images/thefounder.jpg"
-                alt="Ilyes - Founder of Veyronix"
-                fill
-                className="object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="flex-1 max-w-2xl">
-              <p className="text-xl text-gray-300 mb-6">
-                Hey, I&apos;m Ilyes, I run Veyronix, a design and development studio where we help early-stage founders shape their ideas into real products. From the first sketches to a clean, working MVP and the landing page that sells it, we handle it all with care.
-              </p>
-              <p className="text-xl text-gray-300 mb-6">
-                I only take on 3 clients a month so I can stay involved and make sure every detail gets the attention it deserves.
-              </p>
-              <p className="text-xl text-gray-300">
-                If you&apos;re building something and want a partner who gets both the design and the code, let&apos;s talk.
-              </p>
-              <div className="mt-8">
-                <a href="https://calendly.com/ilyes-sissaoui/30min">
-                  <Button className="bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-semibold px-8 py-6 text-lg rounded-full">
-                    Schedule a Call
-                    <Calendar className="ml-2 h-5 w-5" />
-                  </Button>
-                </a>
+            <AnimateOnScroll>
+              <div className="w-64 h-64 relative rounded-full overflow-hidden border-4 border-yellow-400">
+                <Image
+                  src="/images/thefounder.jpg"
+                  alt="Ilyes - Founder of Veyronix"
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                />
               </div>
-            </div>
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <div className="flex-1 max-w-2xl">
+                <p className="text-xl text-gray-300 mb-6">
+                  Hey, I&apos;m Ilyes, I run Veyronix, a design and development studio where we help early-stage founders shape their ideas into real products. From the first sketches to a clean, working MVP and the landing page that sells it, we handle it all with care.
+                </p>
+                <p className="text-xl text-gray-300 mb-6">
+                  I only take on 3 clients a month so I can stay involved and make sure every detail gets the attention it deserves.
+                </p>
+                <p className="text-xl text-gray-300">
+                  If you&apos;re building something and want a partner who gets both the design and the code, let&apos;s talk.
+                </p>
+                <div className="mt-8">
+                  <a href="https://calendly.com/ilyes-sissaoui/30min">
+                    <Button className="bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-semibold px-8 py-6 text-lg rounded-full">
+                      Schedule a Call
+                      <Calendar className="ml-2 h-5 w-5" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
-
     </main>
   );
 }
