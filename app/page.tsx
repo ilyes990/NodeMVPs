@@ -38,8 +38,8 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-          <div className="absolute inset-0 bg-[#020820]/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#020820] via-[#010a2e] to-[#010a2e61]" />
+          <div className="absolute inset-0 bg-[#020820]/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#020820] via-[#010a2e81] to-transparent" />
         </div>
         <div className="w-full max-w-4xl flex flex-col items-center gap-12 my-40 relative z-10">
           <div className="text-center max-w-5xl">
@@ -420,7 +420,7 @@ export default function Home() {
             <AnimateOnScroll>
               <div className="w-64 h-64 relative rounded-full overflow-hidden border-4 border-yellow-400">
                 <Image
-                  src="/images/thefounder.jpg"
+                  src="/images/thefounderr.jpg"
                   alt="Ilyes - Founder of Veyronix"
                   fill
                   className="object-cover"

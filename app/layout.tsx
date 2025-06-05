@@ -41,7 +41,7 @@ const poppinsFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Veyronix | Digital Solutions Agency",
+  title: "Veyronix | Build. Launch. Grow.",
   description: "Turning ideas into reality with mobile apps, landing pages, and UI/UX design.",
   metadataBase: new URL('https://www.veyronixlabs.com'),
 };
@@ -53,7 +53,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppinsFont.variable} font-sans`} suppressHydrationWarning>
-      <head> 
+      <head>
+        <meta name="theme-color" content="transparent" />
         <link
           rel="preload"
           href="/fonts/Poppins-Regular.woff2"
@@ -69,7 +70,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="min-h-screen bg-background font-sans antialiased">
+      <body className="min-h-screen font-sans antialiased" style={{ background: 'transparent', position: 'static' }}>
         <Navbar />
         {children}
         <Footer />
