@@ -38,7 +38,7 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-          <div className="absolute inset-0 bg-[#020820]/50" />
+          {/* <div className="absolute inset-0 bg-[#020820]/50" /> */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#020820] via-[#010a2e81] to-transparent" />
         </div>
         <div className="w-full max-w-4xl flex flex-col items-center gap-12 my-40 relative z-10">
@@ -246,7 +246,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* MVP Development */}
             <Card className="bg-blue-950 bg-opacity-70 border border-yellow-400  backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 flex flex-col h-full">
               
@@ -293,7 +293,6 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            {/* Landing Page Design */}
             <Card className="bg-blue-950 bg-opacity-70 border border-blue-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 flex flex-col h-full">
             <div className="absolute top-0 right-0">
                 <div className="bg-yellow-400 text-blue-950 font-semibold py-1 px-4 text-sm transform rotate-45 translate-x-2 translate-y-3 shadow-lg">
@@ -311,7 +310,7 @@ export default function Home() {
                   <div className="mb-6">
                     <span className="text-gray-400 text-sm">Starting from</span>
                     <div className="text-4xl font-bold text-yellow-400">
-                      $3,000
+                      $2,500
                     </div>
                   </div>
                 </div>
@@ -325,50 +324,6 @@ export default function Home() {
                       "Admin Panel (basic)",
                       "Cross-platform support",
                       "Delivery: 3–4 weeks",
-                    ].map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                        <Check className="h-5 w-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <a href="https://calendly.com/ilyes-sissaoui/30min" className="mt-auto">
-                  <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-semibold py-5 rounded-lg">
-                    Get Started
-                    <ArrowUp className="ml-2 h-4 w-4" />
-                  </Button>
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* App/Web Re-Design */}
-            <Card className="bg-blue-950 bg-opacity-70 border border-blue-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 flex flex-col h-full">
-              <CardContent className="p-8 flex flex-col flex-grow">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-white">
-                    Mobile/Web Design
-                  </h3>
-                  <p className="text-gray-300 mb-6">
-                    Revitalize your existing digital products with modern design
-                  </p>
-                  <div className="mb-6">
-                    <span className="text-gray-400 text-sm">Starting from</span>
-                    <div className="text-4xl font-bold text-yellow-400">
-                      $150
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex-grow mb-8">
-                  <ul className="space-y-3">
-                    {[
-                      "On-Demand Designs",
-                      "Modern UI redesign",
-                      "Mobile, Tablet & Desktop versions",
-                      "3x Revisions",
-                      "Handover & implementation support",
                     ].map((feature, i) => (
                       <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" />

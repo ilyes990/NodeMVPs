@@ -1,9 +1,6 @@
 import { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  images: {
-    domains: ['www.veyronixlabs.com'],
-  },
   async headers() {
     return [
       {
