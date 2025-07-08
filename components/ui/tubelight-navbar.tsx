@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useCallback } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { LucideIcon } from "lucide-react"
@@ -19,12 +19,12 @@ interface NavBarProps {
 
 export function NavBar({ items, className }: NavBarProps) {
   // Determine active tab based on current URL hash
-  const getActiveTab = () => {
+  const getActiveTab = useCallback(() => {
     if (typeof window === 'undefined') return items[0].name
     const hash = window.location.hash || items[0].url
     const activeItem = items.find(item => item.url === hash)
     return activeItem ? activeItem.name : items[0].name
-  }
+  }, [items])
 
   const [activeTab, setActiveTab] = useState(getActiveTab)
 
@@ -45,7 +45,7 @@ export function NavBar({ items, className }: NavBarProps) {
       window.removeEventListener("resize", handleResize)
       window.removeEventListener("hashchange", handleHashChange)
     }
-  }, [getActiveTab]) // Add getActiveTab to dependency array
+  }, [getActiveTab])
 
   return (
     <div

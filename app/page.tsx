@@ -314,7 +314,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex-grow mb-8">
-                  <h4 className="text-lg font-semibold text-white mb-4">What's Included:</h4>
+                  <h4 className="text-lg font-semibold text-white mb-4">What&apos;s Included:</h4>
                   <ul className="space-y-3">
                     {[
                       "60 development hours/month, fully dedicated to your product",
