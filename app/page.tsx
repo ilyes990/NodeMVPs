@@ -248,37 +248,42 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* MVP Development */}
-            <Card className="bg-blue-950 bg-opacity-70 border border-yellow-400  backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 flex flex-col h-full">
-              
+            <Card className="bg-white border border-gray-200 hover:border-yellow-400 transition-all duration-300 flex flex-col h-full shadow-lg relative">
+              <div className="absolute top-0 right-0">
+                <div className="bg-yellow-400 text-blue-950 font-semibold py-1 px-4 text-sm transform rotate-45 translate-x-2 translate-y-3 shadow-lg">
+                  Popular
+                </div>
+              </div>
               <CardContent className="p-8 flex flex-col flex-grow">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-white">
-                    Starter MVP
+                  <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                    MVP Development Package
                   </h3>
-                  <p className="text-gray-300 mb-6">
-                  Perfect for startups or individuals looking to validate one core feature with minimal investment.
-                  </p>
                   <div className="mb-6">
-                    <span className="text-gray-400 text-sm">Starting from</span>
-                    <div className="text-4xl font-bold text-yellow-400">
+                    <span className="text-gray-600 text-sm">Starting at</span>
+                    <div className="text-4xl font-bold text-yellow-500">
                       $1,200
                     </div>
                   </div>
+                  <p className="text-yellow-600 font-medium mb-6">
+                    Limited availability - Only 3 spots this month.
+                  </p>
                 </div>
 
                 <div className="flex-grow mb-8">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">What You Get:</h4>
                   <ul className="space-y-3">
                     {[
-                      "1 Main Feature",
-                      "Simple UI (1–3 Screens)",
-                      "Backend integration",
-                      "Moden and scalable tech stack",
-                      "Cross-platform support",
-                      "Delivery: 1–2 weeks",
+                      "Fully developed MVP in just 4–5 weeks",
+                      "Web app or Android mobile app (Android only)",
+                      "Modern, scalable tech stack tailored to your idea",
+                      "Built-in integrations: payments, authentication, and more",
+                      "Direct collaboration with the founder (me)",
+                      "Transparent process with frequent updates",
                     ].map((feature, i) => (
                       <li key={i} className="flex items-start">
-                        <Check className="h-5 w-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
+                        <Check className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -294,36 +299,30 @@ export default function Home() {
             </Card>
 
             <Card className="bg-blue-950 bg-opacity-70 border border-blue-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 flex flex-col h-full">
-            <div className="absolute top-0 right-0">
-                <div className="bg-yellow-400 text-blue-950 font-semibold py-1 px-4 text-sm transform rotate-45 translate-x-2 translate-y-3 shadow-lg">
-                  Popular
-                </div>
-              </div>
+              
               <CardContent className="p-8 flex flex-col flex-grow">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2 text-white">
-                     Growth MVP
+                     Growth Retainer
                   </h3>
-                  <p className="text-gray-300 mb-6">
-                  For those who want a bit more covering multiple features with a polished look and better user experience.
-                  </p>
                   <div className="mb-6">
-                    <span className="text-gray-400 text-sm">Starting from</span>
                     <div className="text-4xl font-bold text-yellow-400">
-                      $2,500
+                      $1,350<span className="text-lg font-normal text-gray-300">/month</span>
                     </div>
+                    <span className="text-gray-400 text-sm">Cancel anytime, no long-term commitment</span>
                   </div>
                 </div>
 
                 <div className="flex-grow mb-8">
+                  <h4 className="text-lg font-semibold text-white mb-4">What's Included:</h4>
                   <ul className="space-y-3">
                     {[
-                      "2–4 Core Features",
-                      "Custom UI/UX Design (up to 6 screens)",
-                      "Backend + API Integration",
-                      "Admin Panel (basic)",
-                      "Cross-platform support",
-                      "Delivery: 3–4 weeks",
+                      "60 development hours/month, fully dedicated to your product",
+                      "Flexible use of hours across tasks and priorities",
+                      "Weekly strategy sessions to align on goals and roadmap",
+                      "Priority on feature development that moves the needle",
+                      "Ongoing maintenance & performance tuning",
+                      "Same-day emergency support when it matters most",
                     ].map((feature, i) => (
                       <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" />
