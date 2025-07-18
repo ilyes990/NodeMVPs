@@ -1,5 +1,5 @@
 "use client";
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, type Variants } from 'framer-motion';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
@@ -16,14 +16,14 @@ const AnimateOnScroll = ({ children }: { children: React.ReactNode }) => {
     }
   }, [controls, inView]);
 
-  const variants = {
+  const variants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 1,
-        ease: 'easeOut' as any,
+        ease: 'easeOut',
       },
     },
   };
