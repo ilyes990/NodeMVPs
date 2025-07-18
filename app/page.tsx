@@ -2,6 +2,7 @@
 import AnimateOnScroll from "@/components/blocks/animate-on-scroll";
 import { ProjectCard } from "@/components/project-card";
 import { Button } from "@/components/ui/button";
+import { GridPatternCard, GridPatternCardBody } from "@/components/ui/card-with-grid-pattern";
 import { Card, CardContent } from "@/components/ui/card";
 import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects";
 import {
@@ -17,6 +18,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const [showFounderMessage, setShowFounderMessage] = useState(false);
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
@@ -69,10 +71,93 @@ export default function Home() {
         </div>
       </section>
       </AnimateOnScroll>
- 
+
+      {/* Founder Message Section */}
+      <AnimateOnScroll>
+        <section
+          className="px-4 sm:px-8 md:px-20 py-12"
+          id="founder-message"
+        >
+          <blockquote
+            className="max-w-3xl mx-auto text-center text-gray-400 italic border-l-4 border-gray-700 pl-6"
+            style={{ fontFamily: "var(--font-poppins)" }}
+          >
+            <p className="text-xl mb-4">Dear founder, or future founder</p>
+            {showFounderMessage ? (
+              <div className="space-y-4">
+                <p>
+                  You&apos;ve been thinking about it for a while now, that app idea
+                  that just won&apos;t leave your head, scribbled in notebooks,
+                  pitched to friends, and day-dreamed about on your commute.
+                </p>
+                <p>
+                  You know it could work, maybe even change the way people do
+                  things, if only it could get out of your head and into the
+                  hands of real users.
+                </p>
+                <p>
+                  You&apos;ve seen others launch with less, sometimes with nothing
+                  more than a landing page and a bit of nerve, and you can&apos;t
+                  shake the feeling that you could be next.
+                </p>
+                <p>
+                  But you keep hitting the same wall: you&apos;re not technical.
+                </p>
+                <p>
+                  You don&apos;t know how to code, you don&apos;t have a CTO, and you&apos;re
+                  not sure where to begin. You&apos;re already juggling strategy,
+                  customers, and the never-ending to-do list that comes with
+                  building a business.
+                </p>
+                <p>
+                  So the idea just... sits there, collecting dust in Google
+                  Docs and notes apps.
+                </p>
+                <p>
+                  But here&apos;s the truth: you don&apos;t need to figure it all out
+                  alone.
+                </p>
+                <p>You don&apos;t need to learn how to code or study YouTube tutorials.</p>
+                <p>
+                  You don&apos;t need to burn months sourcing the “perfect”
+                  developer who might join once the MVP is done.
+                </p>
+                <p>
+                  You just need a seasoned product team that gets it, and can
+                  build fast.
+                </p>
+                <p>We work with founders like you every single day.</p>
+                <p>
+                  Non-technical creators with bold ideas and zero time to
+                  waste.
+                </p>
+                <p>
+                  We turn your concept into something real, something you can
+                  launch, test, and iterate on, in weeks, not quarters.
+                </p>
+                <p>Your job is to think big, pitch the vision, and rally the market.</p>
+                <p>
+                  Ours is to make it real, fast, with quality, and with the
+                  flexibility to evolve as your users give feedback.
+                </p>
+                <p className="font-medium text-yellow-200">
+                  Sound like what you&apos;ve been looking for? Let&apos;s talk.
+                </p>
+              </div>
+            ) : (
+              <button
+                className="mt-4 text-yellow-300 underline"
+                onClick={() => setShowFounderMessage(true)}
+              >
+                Read more
+              </button>
+            )}
+          </blockquote>
+        </section>
+      </AnimateOnScroll>
 
       {/* Services Section */}
-      <section className="py-20 px-8" id="services">
+      {/* <section className="py-20 px-8" id="services">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
@@ -131,7 +216,58 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* How It Works Section */}
+      <AnimateOnScroll>
+        <section id="how-it-works" className="py-20 px-8" style={{ fontFamily: 'var(--font-poppins)' }}>
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-16 text-yellow-300">
+              Here&apos;s how it works
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+               {/* Step 1 */}
+               <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70">
+                 <GridPatternCardBody className="flex flex-col items-center text-center space-y-4">
+                   <div className="text-6xl font-extrabold text-yellow-300">1</div>
+                   <h3 className="text-xl font-semibold text-white">Share Your Idea</h3>
+                   <p className="text-gray-300 text-sm">
+                     Send us your detailed idea &mdash; Android or web app &mdash; core
+                     features, colors, style, and any examples you have.
+                   </p>
+                 </GridPatternCardBody>
+               </GridPatternCard>
+
+               {/* Step 2 */}
+               <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70">
+                 <GridPatternCardBody className="flex flex-col items-center text-center space-y-4">
+                   <div className="text-6xl font-extrabold text-yellow-300">2</div>
+                   <h3 className="text-xl font-semibold text-white">Free PRD &amp; Design</h3>
+                   <p className="text-gray-300 text-sm">
+                     We&apos;ll create a full PRD and Sketch Design for free, validate the
+                     idea technically, and give you a clear timeline and price &mdash;
+                     no surprises.
+                   </p>
+                 </GridPatternCardBody>
+               </GridPatternCard>
+
+               {/* Step 3 */}
+               <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70">
+                 <GridPatternCardBody className="flex flex-col items-center text-center space-y-4">
+                   <div className="text-6xl font-extrabold text-yellow-300">3</div>
+                   <h3 className="text-xl font-semibold text-white">Build Together</h3>
+                   <p className="text-gray-300 text-sm">
+                     If you&apos;re serious and ready to move fast, we&apos;ll give you our full
+                     attention and top quality. We don&apos;t do guesswork or ghost
+                     &mdash; and we expect the same from you.
+                   </p>
+                 </GridPatternCardBody>
+               </GridPatternCard>
+            </div>
+          </div>
+        </section>
+      </AnimateOnScroll>
 
       {/* Why Choose Us Section */}
       <section className="py-20 px-8" id="why-us">
