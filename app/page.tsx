@@ -156,68 +156,7 @@ export default function Home() {
         </section>
       </AnimateOnScroll>
 
-      {/* Services Section */}
-      {/* <section className="py-20 px-8" id="services">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Our{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
-                Services
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We deliver end-to-end digital solutions that help businesses
-              thrive in the digital landscape
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-[#0d1534] bg-opacity-70 border border-[#0d1534]/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 group">
-              <CardContent className="p-8 flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-[#0d1534]/50 flex items-center justify-center mb-6 group-hover:bg-yellow-400 transition-colors duration-300">
-                  <Smartphone className="h-8 w-8 text-yellow-300 group-hover:text-[#0d1534]" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">
-                  MVP SaaS
-                </h3>
-                <p className="text-gray-300">
-                Your MVP comes with a modern web app, an optimized landing page designed to drive action, and content crafted for search visibility, all built for speed, flexibility, and growth from day one.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-[#0d1534] bg-opacity-70 border border-[#0d1534] backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 group">
-              <CardContent className="p-8 flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-[#0d1534]/50 flex items-center justify-center mb-6 group-hover:bg-yellow-400 transition-colors duration-300">
-                  <Layout className="h-8 w-8 text-yellow-300 group-hover:text-[#0d1534]" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">
-                  Landing Page Design
-                </h3>
-                <p className="text-gray-300">
-                  High-converting, responsive landing pages designed to
-                  captivate your audience and drive action.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-[#0d1534] bg-opacity-70 border border-[#0d1534] backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 group">
-              <CardContent className="p-8 flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-[#0d1534]/50 flex items-center justify-center mb-6 group-hover:bg-yellow-400 transition-colors duration-300">
-                  <Code className="h-8 w-8 text-yellow-300 group-hover:text-indigo-950" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">
-                  Mobile/web Design
-                </h3>
-                <p className="text-gray-300">
-                Beautiful, easy-to-use web and mobile designs that work on any device. Clean, fast, and built to make users feel at home.                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section> */}
-
+    
       {/* How It Works Section */}
       <AnimateOnScroll>
         <section id="how-it-works" className="py-20 px-8" style={{ fontFamily: 'var(--font-poppins)' }}>
