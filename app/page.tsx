@@ -8,10 +8,7 @@ import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section
 import {
   ArrowUp,
   Calendar,
-  Check,
-  Code,
-  Layout,
-  Smartphone,
+  Check
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
