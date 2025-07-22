@@ -2,8 +2,8 @@
 import AnimateOnScroll from "@/components/blocks/animate-on-scroll";
 import { ProjectCard } from "@/components/project-card";
 import { Button } from "@/components/ui/button";
-import { GridPatternCard, GridPatternCardBody } from "@/components/ui/card-with-grid-pattern";
 import { Card, CardContent } from "@/components/ui/card";
+import { GridPatternCard, GridPatternCardBody } from "@/components/ui/card-with-grid-pattern";
 import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects";
 import {
   ArrowUp,
@@ -200,6 +200,88 @@ export default function Home() {
                    </p>
                  </GridPatternCardBody>
                </GridPatternCard>
+            </div>
+          </div>
+        </section>
+      </AnimateOnScroll>
+
+      {/* Projects We Build Section */}
+      <AnimateOnScroll>
+        <section id="projects-we-build" className="py-20 px-8" style={{ fontFamily: 'var(--font-poppins)' }}>
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+              Projects We <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">Build</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-16">
+              From simple landing pages to complex web applications, we build digital solutions across various industries
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* E-commerce Platforms */}
+              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
+                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
+                  <div className="text-4xl">🛒</div>
+                  <h3 className="text-xl font-semibold text-white">E-commerce Platforms</h3>
+                  <p className="text-gray-300 text-sm">
+                    Full-featured online stores with payment processing, inventory management, and customer analytics.
+                  </p>
+                </GridPatternCardBody>
+              </GridPatternCard>
+
+              {/* Social Media Apps */}
+              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
+                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
+                  <div className="text-4xl">👥</div>
+                  <h3 className="text-xl font-semibold text-white">Social Media Apps</h3>
+                  <p className="text-gray-300 text-sm">
+                    Community platforms with user profiles, feeds, messaging, and real-time interactions.
+                  </p>
+                </GridPatternCardBody>
+              </GridPatternCard>
+
+              {/* Analytics Dashboards */}
+              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
+                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
+                  <div className="text-4xl">📊</div>
+                  <h3 className="text-xl font-semibold text-white">Analytics Dashboards</h3>
+                  <p className="text-gray-300 text-sm">
+                    Data visualization tools with interactive charts, reports, and business intelligence insights.
+                  </p>
+                </GridPatternCardBody>
+              </GridPatternCard>
+
+              {/* Management Systems */}
+              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
+                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
+                  <div className="text-4xl">📋</div>
+                  <h3 className="text-xl font-semibold text-white">Management Systems</h3>
+                  <p className="text-gray-300 text-sm">
+                    CRM, project management, and workflow automation tools to streamline business operations.
+                  </p>
+                </GridPatternCardBody>
+              </GridPatternCard>
+
+              {/* Corporate Websites */}
+              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
+                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
+                  <div className="text-4xl">🌐</div>
+                  <h3 className="text-xl font-semibold text-white">Corporate Websites</h3>
+                  <p className="text-gray-300 text-sm">
+                    Professional business websites with modern design, SEO optimization, and conversion focus.
+                  </p>
+                </GridPatternCardBody>
+              </GridPatternCard>
+
+              {/* Real-time Applications */}
+              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
+                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
+                  <div className="text-4xl">⚡</div>
+                  <h3 className="text-xl font-semibold text-white">Real-time Applications</h3>
+                  <p className="text-gray-300 text-sm">
+                    Live chat systems, collaboration tools, and apps requiring instant data synchronization.
+                  </p>
+                </GridPatternCardBody>
+              </GridPatternCard>
             </div>
           </div>
         </section>
@@ -431,8 +513,7 @@ export default function Home() {
         </div>
       </section>
 
-     
-
+    
 
       {/* Meet The Founder Section */}
       <section className="py-20 px-8" id="founder">
@@ -446,7 +527,7 @@ export default function Home() {
             <AnimateOnScroll>
               <div className="w-64 h-64 relative rounded-full overflow-hidden border-4 border-yellow-400">
                 <Image
-                  src="/images/thefounderr.jpg"
+                  src="/images/newimage.jpg"
                   alt="Ilyes - Founder of Veyronix"
                   fill
                   className="object-cover"
