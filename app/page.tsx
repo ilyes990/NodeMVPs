@@ -1,5 +1,8 @@
 "use client";
 import AnimateOnScroll from "@/components/blocks/animate-on-scroll";
+import GSAPHeroAnimation from "@/components/blocks/gsap-hero-animation";
+import { LiquidGlass } from "@/components/core/liquid-glass";
+import { TextShimmer } from "@/components/core/text-shimmer";
 import { ProjectCard } from "@/components/project-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,7 +25,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#020820]">
       {/* Hero Section */}
-      <AnimateOnScroll>
+      <GSAPHeroAnimation>
       <section
         className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-20 relative overflow-visible"
         id="hero"
@@ -42,18 +45,20 @@ export default function Home() {
         </div>
         <div className="w-full max-w-4xl flex flex-col items-center gap-12 my-40 relative z-10">
           <div className="text-center max-w-5xl">
-            <div className="w-52 mx-auto mb-8 rounded-3xl   bg-yellow-100 p-4">
-              <h1 className="text-yellow-600 font-semibold">
-                MVP/Design Agency
-              </h1>
+            <div className="mx-auto mb-8 hero-text">
+              <LiquidGlass>
+                <TextShimmer className="font-light text-white" duration={1.5}>
+                  3 slots remained for september
+                </TextShimmer>
+              </LiquidGlass>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-100 to-yellow-300">
-              Build. Launch. Grow.
+            <h1 className="text-6xl md:text-7xl font-normal mb-6 hero-text">
+              <span className="text-white">Turn Your Startup Idea into a Live MVP in</span> <em className="font-extralight text-yellow-300">2 Weeks</em>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300">
-              We turn your idea into full MVPs in weeks with clean, modern designs that help you launch faster, test smarter, and grow confidently.
+            <p className="text-xl md:text-2xl mb-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300 hero-text">
+            Validate your startup idea with a real product, fast, no code headaches, no delays.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center hero-text">
               <a href="https://calendly.com/ilyes-sissaoui/30mi">
               <Button className="bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-medium px-8 py-6 text-lg rounded-full">
                 Book a free call
@@ -67,7 +72,7 @@ export default function Home() {
          
         </div>
       </section>
-      </AnimateOnScroll>
+      </GSAPHeroAnimation>
 
       {/* Founder Message Section */}
       <AnimateOnScroll>
