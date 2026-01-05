@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useEffect, useState, useCallback } from "react"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
+import { LucideIcon } from "lucide-react"
+import Link from "next/link"
+import { useCallback, useEffect, useState } from "react"
 
 interface NavItem {
   name: string
@@ -54,7 +54,7 @@ export function NavBar({ items, className }: NavBarProps) {
         className,
       )}
     >
-      <div className="flex items-center gap-2 bg-[#0d1534]/70  backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+      <div className="flex items-center gap-2 bg-[#000000]  backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -66,8 +66,8 @@ export function NavBar({ items, className }: NavBarProps) {
               onClick={() => setActiveTab(item.name)}
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-4 py-2 rounded-full transition-colors",
-                "text-gray-300 hover:text-yellow-400",
-                isActive && "bg-[#000622] text-yellow-400",
+                "text-gray-300 hover:text-white",
+                isActive && "bg-[#373737] text-white",
               )}
             >
               <span className="hidden md:inline">{item.name}</span>
@@ -77,7 +77,7 @@ export function NavBar({ items, className }: NavBarProps) {
               {isActive && (
                 <motion.div
                   layoutId="lamp"
-                  className="absolute inset-0 w-full bg-yellow-400/5 rounded-full -z-10"
+                  className="absolute inset-0 w-full bg-[#000000] rounded-full -z-10"
                   initial={false}
                   transition={{
                     type: "spring",
@@ -85,10 +85,10 @@ export function NavBar({ items, className }: NavBarProps) {
                     damping: 30,
                   }}
                 >
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-yellow-400 rounded-t-full">
-                    <div className="absolute w-12 h-6 bg-yellow-400/20 rounded-full blur-md -top-2 -left-2" />
-                    <div className="absolute w-8 h-6 bg-yellow-400/20 rounded-full blur-md -top-1" />
-                    <div className="absolute w-4 h-4 bg-yellow-400/20 rounded-full blur-sm top-0 left-2" />
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-white rounded-t-full">
+                    <div className="absolute w-12 h-6 bg-white/20 rounded-full blur-md -top-2 -left-2" />
+                    <div className="absolute w-8 h-6 bg-white/20 rounded-full blur-md -top-1" />
+                    <div className="absolute w-4 h-4 bg-white/20 rounded-full blur-sm top-0 left-2" />
                   </div>
                 </motion.div>
               )}

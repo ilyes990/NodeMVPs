@@ -6,13 +6,9 @@ import { TextShimmer } from "@/components/core/text-shimmer";
 import { ProjectCard } from "@/components/project-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { GridPatternCard, GridPatternCardBody } from "@/components/ui/card-with-grid-pattern";
 import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects";
-import {
-  ArrowUp,
-  Calendar,
-  Check
-} from "lucide-react";
+import { ProjectCarousel } from "@/components/ui/project-carousel";
+import { ArrowUp, Calendar, Check } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -23,270 +19,145 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <main className="min-h-screen bg-[#020820]">
+    <main className="min-h-screen bg-[#0a0a0a]">
       {/* Hero Section */}
       <GSAPHeroAnimation>
-      <section
-        className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-20 relative overflow-visible"
-        id="hero"
-      >
-        <div className="absolute inset-0">
-          <div className="w-full h-full relative">
-            <Image
-              src="/images/sky.jpg"
-              alt="Sky background"
-              fill
-              priority
-              className="object-cover"
-            />
-          </div>
-          {/* <div className="absolute inset-0 bg-[#020820]/50" /> */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#020820] via-[#010a2e81] to-transparent" />
-        </div>
-        <div className="w-full max-w-4xl flex flex-col items-center gap-12 my-40 relative z-10">
-          <div className="text-center max-w-5xl">
-            <div className="mx-auto mb-8 hero-text">
-              <LiquidGlass>
-                <TextShimmer className="font-light text-white" duration={1.5}>
-                  3 slots remained for september
-                </TextShimmer>
-              </LiquidGlass>
+        <section
+          className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-20 relative overflow-visible mb-20"
+          id="hero"
+        >
+          {/* Background Image Layer */}
+          <div className="absolute inset-0">
+            <div className="w-full h-full relative">
+              <Image
+                src="/images/new-background.png"
+                alt="Hero background"
+                fill
+                priority
+                className="object-cover w-full h-full"
+                style={{ zIndex: 0 }}
+              />
             </div>
-            <h1 className="text-6xl md:text-7xl font-normal mb-6 hero-text">
-              <span className="text-white">Turn Your Startup Idea into a Live MVP in</span> <em className="font-extralight text-yellow-300">2 Weeks</em>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300 hero-text">
-            Validate your startup idea with a real product, fast, no code headaches, no delays.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center hero-text">
-              <a href="https://calendly.com/ilyes-sissaoui/30mi">
-              <Button className="bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-medium px-8 py-6 text-lg rounded-full">
-                Book a free call
-                <Calendar className="ml-2 h-5 w-5" />
-              </Button>
-              </a>
-    
-            
+            {/* <div className="absolute inset-0 bg-[#020820]/50" /> */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#00030f59] to-[#0909092d]" style={{ zIndex: 1 }} />
+          </div>
+          <div className="w-full max-w-4xl flex flex-col items-center gap-12 my-40 relative z-10">
+            <div className="text-center max-w-5xl">
+              <div className="mx-auto mb-8 hero-text">
+                <LiquidGlass>
+                  <TextShimmer className="font-light text-white" duration={1.5}>
+                    3 slots remained
+                  </TextShimmer>
+                </LiquidGlass>
+              </div>
+               <h1 className="text-6xl md:text-7xl font-normal mb-6 hero-text">
+                 <span className="text-white" style={{ fontFamily: "var(--font-halant)" }}>
+                   Boost Your Sales With Captivating, Conversion-Focused
+                 </span>{" "}
+                 <em
+                   className="font-medium italic bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-lg"
+                   style={{ 
+                     fontFamily: "var(--font-instrument-serif)",
+                     textShadow: "0 0 20px rgba(255, 255, 255, 0.3)"
+                   }}
+                 >
+                   Design And build.
+                 </em>
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300 hero-text">
+              Professional web & mobile interfaces that turn clicks into cash
+
+
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center hero-text mb-44">
+                <a href="https://calendly.com/ilyes-sissaoui/30mi">
+                  <LiquidGlass>
+
+                     <Button className="bg-transparent hover:bg-white hover:text-black text-white font-light px-4 py-4 text-lg rounded-full">
+                      Book a free call
+                      <Calendar className="ml-2 h-5 w-5" />
+                    </Button>
+                  </LiquidGlass>
+                </a>
+              </div>
             </div>
           </div>
-         
-        </div>
-      </section>
+          {/* Project Images Carousel */}
+          <ProjectCarousel />
+        </section>
       </GSAPHeroAnimation>
 
-      {/* Founder Message Section */}
+    
+      {/* Specializations & Industries Section */}
       <AnimateOnScroll>
         <section
-          className="px-4 sm:px-8 md:px-20 py-12"
-          id="founder-message"
+          id="specializations"
+          className="py-32 px-8 relative overflow-hidden"
         >
-          <blockquote
-            className="max-w-3xl mx-auto text-center text-gray-400 italic border-l-4 border-gray-700 pl-6"
-            style={{ fontFamily: "var(--font-poppins)" }}
-          >
-            <p className="text-xl mb-4">Dear founder, or future founder</p>
-            {showFounderMessage ? (
-              <div className="space-y-4">
-                <p>
-                  You&apos;ve been thinking about it for a while now, that app idea
-                  that just won&apos;t leave your head, scribbled in notebooks,
-                  pitched to friends, and day-dreamed about on your commute.
-                </p>
-                <p>
-                  You know it could work, maybe even change the way people do
-                  things, if only it could get out of your head and into the
-                  hands of real users.
-                </p>
-                <p>
-                  You&apos;ve seen others launch with less, sometimes with nothing
-                  more than a landing page and a bit of nerve, and you can&apos;t
-                  shake the feeling that you could be next.
-                </p>
-                <p>
-                  But you keep hitting the same wall: you&apos;re not technical.
-                </p>
-                <p>
-                  You don&apos;t know how to code, you don&apos;t have a CTO, and you&apos;re
-                  not sure where to begin. You&apos;re already juggling strategy,
-                  customers, and the never-ending to-do list that comes with
-                  building a business.
-                </p>
-                <p>
-                  So the idea just... sits there, collecting dust in Google
-                  Docs and notes apps.
-                </p>
-                <p>
-                  But here&apos;s the truth: you don&apos;t need to figure it all out
-                  alone.
-                </p>
-                <p>You don&apos;t need to learn how to code or study YouTube tutorials.</p>
-                <p>
-                  You don&apos;t need to burn months sourcing the “perfect”
-                  developer who might join once the MVP is done.
-                </p>
-                <p>
-                  You just need a seasoned product team that gets it, and can
-                  build fast.
-                </p>
-                <p>We work with founders like you every single day.</p>
-                <p>
-                  Non-technical creators with bold ideas and zero time to
-                  waste.
-                </p>
-                <p>
-                  We turn your concept into something real, something you can
-                  launch, test, and iterate on, in weeks, not quarters.
-                </p>
-                <p>Your job is to think big, pitch the vision, and rally the market.</p>
-                <p>
-                  Ours is to make it real, fast, with quality, and with the
-                  flexibility to evolve as your users give feedback.
-                </p>
-                <p className="font-medium text-yellow-200">
-                  Sound like what you&apos;ve been looking for? Let&apos;s talk.
-                </p>
-              </div>
-            ) : (
-              <button
-                className="mt-4 text-yellow-300 underline"
-                onClick={() => setShowFounderMessage(true)}
+          {/* Light Gradient Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#030303] via-[#030303] to-[#171718]"></div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              
+              {/* We Specialise In Card */}
+              <div 
+                className="relative transform -rotate-2 lg:-rotate-3 hover:rotate-0 transition-transform duration-500"
+                style={{ transformOrigin: 'center' }}
               >
-                Read more
-              </button>
-            )}
-          </blockquote>
-        </section>
-      </AnimateOnScroll>
+                <div className="bg-[#06223f] backdrop-blur-xl rounded-3xl p-8 border border-blue-400/20 shadow-2xl">
+                  <h3 className="text-2xl font-normal text-blue-200 mb-8 tracking-wider" style={{ fontFamily: "var(--font-halant)" }}>
+                    We Specialise In
+                  </h3>
+                  <div className="space-y-4"style={{ fontFamily: "var(--font-halant)" }}>
+                    <div className="border-b border-blue-400/20 pb-3" >
+                      <p className="text-white text-xl font-medium">PRODUCT DESIGN</p>
+                    </div>
+                    <div className="border-b border-blue-400/20 pb-3">
+                      <p className="text-white text-xl font-medium">WEB DESIGN</p>
+                    </div>
+                    <div className="border-b border-blue-400/20 pb-3">
+                      <p className="text-white text-xl font-medium">APP DESIGN</p>
+                    </div>
+                    <div className="border-b border-blue-400/20 pb-3">
+                      <p className="text-white text-xl font-medium">0 TO 1 MVPS</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-    
-      {/* How It Works Section */}
-      <AnimateOnScroll>
-        <section id="how-it-works" className="py-20 px-8" style={{ fontFamily: 'var(--font-poppins)' }}>
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-16 text-yellow-300">
-              Here&apos;s how it works
-            </h2>
+              {/* Industries We Help Card */}
+              <div 
+                className="relative transform rotate-2 lg:rotate-3 hover:rotate-0 transition-transform duration-500"
+                style={{ transformOrigin: 'center' , fontFamily: "var(--font-halant)" }}
+              >
+                <div className="bg-[#0b6764] backdrop-blur-xl rounded-3xl p-8 border border-cyan-400/20 shadow-2xl">
+                  <h3 className="text-3xl font-medium text-cyan-200 mb-8  tracking-wider">
+                    Industries we help
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="border-b border-cyan-400/20 pb-3">
+                      <p className="text-white text-xl font-medium">SAAS</p>
+                    </div>
+                    <div className="border-b border-cyan-400/20 pb-3">
+                      <p className="text-white text-xl font-medium">AGENCY</p>
+                    </div>
+                    <div className="border-b border-cyan-400/20 pb-3">
+                      <p className="text-white text-xl font-medium">REAL ESTATE</p>
+                    </div>
+                    <div className="border-b border-cyan-400/20 pb-3">
+                      <p className="text-white text-xl font-medium">FINANCE</p>
+                    </div>
+                    <div className="border-b border-cyan-400/20 pb-3">
+                      <p className="text-white text-xl font-medium">HEALTH & FITNESS</p>
+                    </div>
+                    <div className="pb-3">
+                      <p className="text-white text-xl font-medium">WEB 3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-               {/* Step 1 */}
-               <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70">
-                 <GridPatternCardBody className="flex flex-col items-center text-center space-y-4">
-                   <div className="text-6xl font-extrabold text-yellow-300">1</div>
-                   <h3 className="text-xl font-semibold text-white">Share Your Idea</h3>
-                   <p className="text-gray-300 text-sm">
-                     Send us your detailed idea &mdash; Android or web app &mdash; core
-                     features, colors, style, and any examples you have.
-                   </p>
-                 </GridPatternCardBody>
-               </GridPatternCard>
-
-               {/* Step 2 */}
-               <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70">
-                 <GridPatternCardBody className="flex flex-col items-center text-center space-y-4">
-                   <div className="text-6xl font-extrabold text-yellow-300">2</div>
-                   <h3 className="text-xl font-semibold text-white">Free PRD &amp; Design</h3>
-                   <p className="text-gray-300 text-sm">
-                     We&apos;ll create a full PRD and Sketch Design for free, validate the
-                     idea technically, and give you a clear timeline and price &mdash;
-                     no surprises.
-                   </p>
-                 </GridPatternCardBody>
-               </GridPatternCard>
-
-               {/* Step 3 */}
-               <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70">
-                 <GridPatternCardBody className="flex flex-col items-center text-center space-y-4">
-                   <div className="text-6xl font-extrabold text-yellow-300">3</div>
-                   <h3 className="text-xl font-semibold text-white">Build Together</h3>
-                   <p className="text-gray-300 text-sm">
-                     If you&apos;re serious and ready to move fast, we&apos;ll give you our full
-                     attention and top quality. We don&apos;t do guesswork or ghost
-                     &mdash; and we expect the same from you.
-                   </p>
-                 </GridPatternCardBody>
-               </GridPatternCard>
-            </div>
-          </div>
-        </section>
-      </AnimateOnScroll>
-
-      {/* Projects We Build Section */}
-      <AnimateOnScroll>
-        <section id="projects-we-build" className="py-20 px-8" style={{ fontFamily: 'var(--font-poppins)' }}>
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Projects We <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">Build</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-16">
-              From simple landing pages to complex web applications, we build digital solutions across various industries
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* E-commerce Platforms */}
-              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
-                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
-                  <div className="text-4xl">🛒</div>
-                  <h3 className="text-xl font-semibold text-white">E-commerce Platforms</h3>
-                  <p className="text-gray-300 text-sm">
-                    Full-featured online stores with payment processing, inventory management, and customer analytics.
-                  </p>
-                </GridPatternCardBody>
-              </GridPatternCard>
-
-              {/* Social Media Apps */}
-              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
-                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
-                  <div className="text-4xl">👥</div>
-                  <h3 className="text-xl font-semibold text-white">Social Media Apps</h3>
-                  <p className="text-gray-300 text-sm">
-                    Community platforms with user profiles, feeds, messaging, and real-time interactions.
-                  </p>
-                </GridPatternCardBody>
-              </GridPatternCard>
-
-              {/* Analytics Dashboards */}
-              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
-                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
-                  <div className="text-4xl">📊</div>
-                  <h3 className="text-xl font-semibold text-white">Analytics Dashboards</h3>
-                  <p className="text-gray-300 text-sm">
-                    Data visualization tools with interactive charts, reports, and business intelligence insights.
-                  </p>
-                </GridPatternCardBody>
-              </GridPatternCard>
-
-              {/* Management Systems */}
-              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
-                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
-                  <div className="text-4xl">📋</div>
-                  <h3 className="text-xl font-semibold text-white">Management Systems</h3>
-                  <p className="text-gray-300 text-sm">
-                    CRM, project management, and workflow automation tools to streamline business operations.
-                  </p>
-                </GridPatternCardBody>
-              </GridPatternCard>
-
-              {/* Corporate Websites */}
-              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
-                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
-                  <div className="text-4xl">🌐</div>
-                  <h3 className="text-xl font-semibold text-white">Corporate Websites</h3>
-                  <p className="text-gray-300 text-sm">
-                    Professional business websites with modern design, SEO optimization, and conversion focus.
-                  </p>
-                </GridPatternCardBody>
-              </GridPatternCard>
-
-              {/* Real-time Applications */}
-              <GridPatternCard className="bg-[#0d1534] border-[#0d1534]/70 hover:border-yellow-400/30 transition-all duration-300">
-                <GridPatternCardBody className="flex flex-col items-start text-left space-y-4 p-6">
-                  <div className="text-4xl">⚡</div>
-                  <h3 className="text-xl font-semibold text-white">Real-time Applications</h3>
-                  <p className="text-gray-300 text-sm">
-                    Live chat systems, collaboration tools, and apps requiring instant data synchronization.
-                  </p>
-                </GridPatternCardBody>
-              </GridPatternCard>
             </div>
           </div>
         </section>
@@ -295,19 +166,17 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section className="py-20 px-8" id="why-us">
         <div className="max-w-6xl mx-auto">
-        <AnimateOnScroll>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Why Choose{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
-                Veyronix
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We combine technical expertise with creative excellence to deliver
-              exceptional digital solutions
-            </p>
-          </div>
+          <AnimateOnScroll>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-light mb-16 bg-gradient-to-r from-white to-[#152eb7] bg-clip-text text-transparent"style={{ fontFamily: "var(--font-halant)" }}>
+                Why Choose Veyronix
+               
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We combine technical expertise with creative excellence to
+                deliver exceptional digital solutions
+              </p>
+            </div>
           </AnimateOnScroll>
           <FeaturesSectionWithHoverEffects />
         </div>
@@ -318,74 +187,96 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">Portfolio</span>
+              Our{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
+                Portfolio
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              See examples of our work in MVP development and landing page design
+              See examples of our work in MVP development and landing page
+              design
             </p>
           </div>
-          
+
           <AnimateOnScroll>
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold mb-8 text-white">MVP Projects</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <ProjectCard
-                title="Dream-to-plan"
-                category="MVP"
-                description="A goal-setting app that transforms user dreams into actionable step-by-step plans instantly. Just enter your goal and get a personalized roadmap to start achieving today"
-                imageSrc="/images/dream_to_plan.png"
-              />
-               <ProjectCard
-                title="DocuAlert"
-                category="MVP"
-                description="DocuAlert is a robust document management and expiration tracking solution designed to ensure organizations never miss a critical deadline. It provides secure storage and automated email reminders for expiring documents such as contracts, licenses, and certifications."
-                imageSrc="/images/docuAlert.jpg"
-              />
-              <ProjectCard
-                title="WebAgency CRM"
-                category="MVP"
-                description="Manage leads, projects, and team collaboration all in one place. Built specifically for web design agencies to boost productivity and grow their business."
-                imageSrc="/images/crm.jpg"
-              />
-              <ProjectCard
-                title="AdvenHive"
-                category="MVP"
-                description="A mobile app for planning adventures with AI-driven suggestions."
-                imageSrc="/images/mvp/Group 32.png"
-              />
-              <ProjectCard
-                title="Peeps"
-                category="MVP"
-                description="A social media platform with features like user profiles, posts, and comments."
-                imageSrc="/images/mvp/GqqCNRjW4AAcp5x.jpeg"
-              />
-             
+            <div className="w-full max-w-[95%] md:max-w-[90%] mx-auto px-4 md:px-0">
+              <h3 className="text-2xl font-bold mb-16 text-white text-center">
+                MVP Projects
+              </h3>
+              <div className="flex flex-col space-y-8 md:space-y-16 mb-24">
+                <div className="w-full h-[20rem] md:h-[50rem]">
+                  <ProjectCard
+                    title="Dream-to-plan"
+                    category="MVP"
+                    description="A goal-setting app that transforms user dreams into actionable step-by-step plans instantly. Just enter your goal and get a personalized roadmap to start achieving today"
+                    imageSrc="/images/dream_to_plan.png"
+                  />
+                </div>
+                <div className="w-full h-[20rem] md:h-[50rem]">
+                  <ProjectCard
+                    title="DocuAlert"
+                    category="MVP"
+                    description="DocuAlert is a robust document management and expiration tracking solution designed to ensure organizations never miss a critical deadline. It provides secure storage and automated email reminders for expiring documents such as contracts, licenses, and certifications."
+                    imageSrc="/images/docuAlert.jpg"
+                  />
+                </div>
+                <div className="w-full h-[20rem] md:h-[50rem]">
+                  <ProjectCard
+                    title="WebAgency CRM"
+                    category="MVP"
+                    description="Manage leads, projects, and team collaboration all in one place. Built specifically for web design agencies to boost productivity and grow their business."
+                    imageSrc="/images/crm.jpg"
+                  />
+                </div>
+                <div className="w-full h-[20rem] md:h-[50rem]">
+                  <ProjectCard
+                    title="AdvenHive"
+                    category="MVP"
+                    description="A mobile app for planning adventures with AI-driven suggestions."
+                    imageSrc="/images/mvp/Group 32.png"
+                  />
+                </div>
+                <div className="w-full h-[20rem] md:h-[50rem]">
+                  <ProjectCard
+                    title="Peeps"
+                    category="MVP"
+                    description="A social media platform with features like user profiles, posts, and comments."
+                    imageSrc="/images/mvp/GqqCNRjW4AAcp5x.jpeg"
+                  />
+                </div>
+              </div>
+              
+              <h3 className="text-2xl font-bold mb-16 text-white text-center">
+                Landing Pages
+              </h3>
+              <div className="flex flex-col space-y-8 md:space-y-16">
+                <div className="w-full h-[20rem] md:h-[50rem]">
+                  <ProjectCard
+                    title="SaaS Product"
+                    category="Web Design"
+                    description="High-converting landing page for a B2B SaaS product with clear value proposition."
+                    imageSrc="/images/landingpages/GovmrrfXcAAQy0z.jpeg"
+                  />
+                </div>
+                <div className="w-full h-[20rem] md:h-[50rem]">
+                  <ProjectCard
+                    title="Mobile App"
+                    category="Web Design"
+                    description="Clean, modern landing page highlighting app features and download options."
+                    imageSrc="/images/landingpages/Gq1lTLBXUAE8qNf.jpeg"
+                  />
+                </div>
+                <div className="w-full h-[20rem] md:h-[50rem]">
+                  <ProjectCard
+                    title="Digital Agency"
+                    category="Web Design"
+                    description="Creative agency website showcasing services and portfolio with animated elements."
+                    imageSrc="/images/landingpages/GqlEVV3WEAEEJ5Y.jpeg"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
           </AnimateOnScroll>
-          <div>
-            <h3 className="text-2xl font-bold mb-8 text-white">Landing Pages</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <ProjectCard
-                title="SaaS Product"
-                category="Web Design"
-                description="High-converting landing page for a B2B SaaS product with clear value proposition."
-                imageSrc="/images/landingpages/GovmrrfXcAAQy0z.jpeg"
-              />
-              <ProjectCard
-                title="Mobile App"
-                category="Web Design"
-                description="Clean, modern landing page highlighting app features and download options."
-                imageSrc="/images/landingpages/Gq1lTLBXUAE8qNf.jpeg"
-              />
-              <ProjectCard
-                title="Digital Agency"
-                category="Web Design"
-                description="Creative agency website showcasing services and portfolio with animated elements."
-                imageSrc="/images/landingpages/GqlEVV3WEAEEJ5Y.jpeg"
-              />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -430,7 +321,9 @@ export default function Home() {
                 </div>
 
                 <div className="flex-grow mb-8">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">What You Get:</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                    What You Get:
+                  </h4>
                   <ul className="space-y-3">
                     {[
                       "Fully developed MVP in just 4–5 weeks",
@@ -448,7 +341,10 @@ export default function Home() {
                   </ul>
                 </div>
 
-                <a href="https://calendly.com/ilyes-sissaoui/30min" className="mt-auto">
+                <a
+                  href="https://calendly.com/ilyes-sissaoui/30min"
+                  className="mt-auto"
+                >
                   <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-semibold py-5 rounded-lg">
                     Get Started
                     <ArrowUp className="ml-2 h-4 w-4" />
@@ -458,22 +354,28 @@ export default function Home() {
             </Card>
 
             <Card className="bg-blue-950 bg-opacity-70 border border-blue-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 flex flex-col h-full">
-              
               <CardContent className="p-8 flex flex-col flex-grow">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2 text-white">
-                     Growth Retainer
+                    Growth Retainer
                   </h3>
                   <div className="mb-6">
                     <div className="text-4xl font-bold text-yellow-400">
-                      $1,350<span className="text-lg font-normal text-gray-300">/month</span>
+                      $1,350
+                      <span className="text-lg font-normal text-gray-300">
+                        /month
+                      </span>
                     </div>
-                    <span className="text-gray-400 text-sm">Cancel anytime, no long-term commitment</span>
+                    <span className="text-gray-400 text-sm">
+                      Cancel anytime, no long-term commitment
+                    </span>
                   </div>
                 </div>
 
                 <div className="flex-grow mb-8">
-                  <h4 className="text-lg font-semibold text-white mb-4">What&apos;s Included:</h4>
+                  <h4 className="text-lg font-semibold text-white mb-4">
+                    What&apos;s Included:
+                  </h4>
                   <ul className="space-y-3">
                     {[
                       "60 development hours/month, fully dedicated to your product",
@@ -491,7 +393,10 @@ export default function Home() {
                   </ul>
                 </div>
 
-                <a href="https://calendly.com/ilyes-sissaoui/30min" className="mt-auto">
+                <a
+                  href="https://calendly.com/ilyes-sissaoui/30min"
+                  className="mt-auto"
+                >
                   <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-semibold py-5 rounded-lg">
                     Get Started
                     <ArrowUp className="ml-2 h-4 w-4" />
@@ -518,14 +423,15 @@ export default function Home() {
         </div>
       </section>
 
-    
-
       {/* Meet The Founder Section */}
       <section className="py-20 px-8" id="founder">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Meet The <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">Founder</span>
+              Meet The{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
+                Founder
+              </span>
             </h2>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-12">
@@ -543,13 +449,19 @@ export default function Home() {
             <AnimateOnScroll>
               <div className="flex-1 max-w-2xl">
                 <p className="text-xl text-gray-300 mb-6">
-                  Hey, I&apos;m Ilyes, I run Veyronix, a design and development studio where we help early-stage founders shape their ideas into real products. From the first sketches to a clean, working MVP and the landing page that sells it, we handle it all with care.
+                  Hey, I&apos;m Ilyes, I run Veyronix, a design and development
+                  studio where we help early-stage founders shape their ideas
+                  into real products. From the first sketches to a clean,
+                  working MVP and the landing page that sells it, we handle it
+                  all with care.
                 </p>
                 <p className="text-xl text-gray-300 mb-6">
-                  I only take on 3 clients a month so I can stay involved and make sure every detail gets the attention it deserves.
+                  I only take on 3 clients a month so I can stay involved and
+                  make sure every detail gets the attention it deserves.
                 </p>
                 <p className="text-xl text-gray-300">
-                  If you&apos;re building something and want a partner who gets both the design and the code, let&apos;s talk.
+                  If you&apos;re building something and want a partner who gets
+                  both the design and the code, let&apos;s talk.
                 </p>
                 <div className="mt-8">
                   <a href="https://calendly.com/ilyes-sissaoui/30min">
