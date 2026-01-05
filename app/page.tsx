@@ -14,7 +14,6 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-  const [showFounderMessage, setShowFounderMessage] = useState(false);
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 

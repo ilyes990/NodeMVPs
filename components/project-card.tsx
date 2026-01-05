@@ -3,12 +3,6 @@
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
 
-
-type Technology = {
-  name: string;
-  icon?: string;
-};
-
 type ProjectProps = {
   // title: string;
   // category: string;
