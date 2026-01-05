@@ -10,20 +10,20 @@ type Technology = {
 };
 
 type ProjectProps = {
-  title: string;
-  category: string;
-  description: string;
-  longDescription?: string;
-  videoUrl?: string;
-  technologies?: Technology[];
-  downloadUrl?: string;
+  // title: string;
+  // category: string;
+  // description: string;
+  // longDescription?: string;
+  // videoUrl?: string;
+  // technologies?: Technology[];
+  // downloadUrl?: string;
   imageSrc?: string;
 };
 
 export function ProjectCard({
-  title,
-  category,
-  description,
+  // title,
+  // category,
+  // description,
   imageSrc = '/placeholder.svg?height=300&width=400',
 }: ProjectProps) {
   return (
@@ -31,7 +31,7 @@ export function ProjectCard({
           <div className="relative w-full h-full overflow-hidden rounded-3xl">
             <Image
               src={imageSrc}
-              alt={`${title} preview`}
+              alt={` preview`}
               fill
               loading="eager"
               className="object-contain md:object-cover group-hover:scale-110 transition-transform duration-700"
