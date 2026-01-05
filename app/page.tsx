@@ -168,7 +168,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <AnimateOnScroll>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-light mb-16 bg-gradient-to-r from-white to-[#152eb7] bg-clip-text text-transparent"style={{ fontFamily: "var(--font-halant)" }}>
+              <h2 className="text-3xl md:text-5xl font-light mb-16 bg-gradient-to-r from-white to-[#0497ff] bg-clip-text text-transparent"style={{ fontFamily: "var(--font-halant)" }}>
                 Why Choose Veyronix
                
               </h2>
@@ -186,11 +186,9 @@ export default function Home() {
       <section className="py-20 px-8" id="portfolio">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Our{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
-                Portfolio
-              </span>
+            <h2 className="text-5xl md:text-5xl font-light mb-16 bg-gradient-to-r from-white to-[#0497ff] bg-clip-text text-transparent"style={{ fontFamily: "var(--font-halant)" }}>
+              Our Portfolio
+              
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               See examples of our work in MVP development and landing page
@@ -284,11 +282,8 @@ export default function Home() {
       <section className="py-20 px-8" id="pricing">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Our{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
-                Pricing
-              </span>
+            <h2 className="text-5xl md:text-5xl font-light mb-16 bg-gradient-to-r from-white to-[#0497ff] bg-clip-text text-transparent"style={{ fontFamily: "var(--font-halant)" }}  >
+              Our Pricing
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Transparent pricing options tailored to your specific needs and
@@ -298,24 +293,24 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* MVP Development */}
-            <Card className="bg-white border border-gray-200 hover:border-yellow-400 transition-all duration-300 flex flex-col h-full shadow-lg relative">
+            <Card className="bg-white border border-gray-200 hover:border-[#0497ff] transition-all duration-300 flex flex-col h-full shadow-lg relative">
               <div className="absolute top-0 right-0">
-                <div className="bg-yellow-400 text-blue-950 font-semibold py-1 px-4 text-sm transform rotate-45 translate-x-2 translate-y-3 shadow-lg">
+                <div className="bg-[#0497ff] text-white font-semibold py-1 px-4 text-sm transform rotate-45 translate-x-2 translate-y-3 shadow-lg">
                   Popular
                 </div>
               </div>
               <CardContent className="p-8 flex flex-col flex-grow">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                  <h3 className="text-2xl font-bold mb-2 text-gray-900"style={{ fontFamily: "var(--font-halant)" }} >
                     MVP Development Package
                   </h3>
                   <div className="mb-6">
                     <span className="text-gray-600 text-sm">Starting at</span>
-                    <div className="text-4xl font-bold text-yellow-500">
+                    <div className="text-4xl font-bold text-[#0497ff]">
                       $1,200
                     </div>
                   </div>
-                  <p className="text-yellow-600 font-medium mb-6">
+                  <p className="text-[#0497ff] font-medium mb-6">
                     Limited availability - Only 3 spots this month.
                   </p>
                 </div>
@@ -334,7 +329,7 @@ export default function Home() {
                       "Transparent process with frequent updates",
                     ].map((feature, i) => (
                       <li key={i} className="flex items-start">
-                        <Check className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <Check className="h-5 w-5 text-[#0497ff] mr-2 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{feature}</span>
                       </li>
                     ))}
@@ -345,7 +340,7 @@ export default function Home() {
                   href="https://calendly.com/ilyes-sissaoui/30min"
                   className="mt-auto"
                 >
-                  <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-semibold py-5 rounded-lg">
+                  <Button className="w-full bg-[#0497ff] hover:bg-[#0380d9] text-white font-semibold py-5 rounded-lg">
                     Get Started
                     <ArrowUp className="ml-2 h-4 w-4" />
                   </Button>
@@ -353,14 +348,14 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="bg-blue-950 bg-opacity-70 border border-blue-800/30 backdrop-blur-sm hover:border-yellow-400 transition-all duration-300 flex flex-col h-full">
+            <Card className="bg-blue-950 bg-opacity-70 border border-blue-800/30 backdrop-blur-sm hover:border-[#0497ff] transition-all duration-300 flex flex-col h-full">
               <CardContent className="p-8 flex flex-col flex-grow">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-2 text-white">
                     Growth Retainer
                   </h3>
                   <div className="mb-6">
-                    <div className="text-4xl font-bold text-yellow-400">
+                    <div className="text-4xl font-bold text-[#0497ff]">
                       $1,350
                       <span className="text-lg font-normal text-gray-300">
                         /month
@@ -386,7 +381,7 @@ export default function Home() {
                       "Same-day emergency support when it matters most",
                     ].map((feature, i) => (
                       <li key={i} className="flex items-start">
-                        <Check className="h-5 w-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" />
+                        <Check className="h-5 w-5 text-[#0497ff] mr-2 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-300">{feature}</span>
                       </li>
                     ))}
@@ -397,7 +392,7 @@ export default function Home() {
                   href="https://calendly.com/ilyes-sissaoui/30min"
                   className="mt-auto"
                 >
-                  <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-semibold py-5 rounded-lg">
+                  <Button className="w-full bg-[#0497ff] hover:bg-[#0380d9] text-white font-semibold py-5 rounded-lg">
                     Get Started
                     <ArrowUp className="ml-2 h-4 w-4" />
                   </Button>
@@ -414,7 +409,7 @@ export default function Home() {
             <a href="https://wa.me/213674130077">
               <Button
                 variant="outline"
-                className="border-yellow-400 text-yellow-400 hover:bg-indigo-900 px-8 py-4 rounded-full"
+                className="border-[#0497ff] text-[#0497ff] hover:bg-[#0497ff]/10 px-8 py-4 rounded-full"
               >
                 Get Custom Quote
               </Button>
@@ -429,14 +424,14 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
               Meet The{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#0497ff]">
                 Founder
               </span>
             </h2>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-12">
             <AnimateOnScroll>
-              <div className="w-64 h-64 relative rounded-full overflow-hidden border-4 border-yellow-400">
+              <div className="w-64 h-64 relative rounded-full overflow-hidden border-4 border-[#0497ff]">
                 <Image
                   src="/images/newimage.jpg"
                   alt="Ilyes - Founder of Veyronix"
@@ -465,7 +460,7 @@ export default function Home() {
                 </p>
                 <div className="mt-8">
                   <a href="https://calendly.com/ilyes-sissaoui/30min">
-                    <Button className="bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-semibold px-8 py-6 text-lg rounded-full">
+                    <Button className="bg-[#0497ff] hover:bg-[#0380d9] text-white font-semibold px-8 py-6 text-lg rounded-full">
                       Schedule a Call
                       <Calendar className="ml-2 h-5 w-5" />
                     </Button>
