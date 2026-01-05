@@ -206,7 +206,7 @@ export default function Home() {
                     // title="Dream-to-plan"
                     // category="MVP"
                     // description="A goal-setting app that transforms user dreams into actionable step-by-step plans instantly. Just enter your goal and get a personalized roadmap to start achieving today"
-                    imageSrc="/images/dream_to_plan.png"
+                    imageSrc="/images/designs/design1.png"
                   />
                 </div>
                 <div className="w-full h-[20rem] md:h-[50rem]">
@@ -214,7 +214,7 @@ export default function Home() {
                     // title="DocuAlert"
                     // category="MVP"
                     // description="DocuAlert is a robust document management and expiration tracking solution designed to ensure organizations never miss a critical deadline. It provides secure storage and automated email reminders for expiring documents such as contracts, licenses, and certifications."
-                    imageSrc="/images/docuAlert.jpg"
+                    imageSrc="/images/designs/design2.png"
                   />
                 </div>
                 <div className="w-full h-[20rem] md:h-[50rem]">
@@ -222,7 +222,7 @@ export default function Home() {
                     // title="WebAgency CRM"
                     // category="MVP"
                     // description="Manage leads, projects, and team collaboration all in one place. Built specifically for web design agencies to boost productivity and grow their business."
-                    imageSrc="/images/crm.jpg"
+                    imageSrc="/images/designs/design3.png"
                   />
                 </div>
                 <div className="w-full h-[20rem] md:h-[50rem]">
@@ -230,7 +230,7 @@ export default function Home() {
                     // title="AdvenHive"
                     // category="MVP"
                     // description="A mobile app for planning adventures with AI-driven suggestions."
-                    imageSrc="/images/mvp/Group 32.png"
+                    imageSrc="/images/designs/design4.png"
                   />
                 </div>
                 <div className="w-full h-[20rem] md:h-[50rem]">
@@ -238,7 +238,15 @@ export default function Home() {
                     // title="Peeps"
                     // category="MVP"
                     // description="A social media platform with features like user profiles, posts, and comments."
-                    imageSrc="/images/mvp/GqqCNRjW4AAcp5x.jpeg"
+                    imageSrc="/images/designs/design5.png"
+                  />
+                </div>
+                <div className="w-full h-[20rem] md:h-[50rem]">
+                  <ProjectCard
+                    // title="Peeps"
+                    // category="MVP"
+                    // description="A social media platform with features like user profiles, posts, and comments."
+                    imageSrc="/images/designs/design6.png"
                   />
                 </div>
               </div>
@@ -253,22 +261,7 @@ export default function Home() {
                     imageSrc="/images/landingpages/GovmrrfXcAAQy0z.jpeg"
                   />
                 </div>
-                <div className="w-full h-[20rem] md:h-[50rem]">
-                  <ProjectCard
-                    // title="Mobile App"
-                    // category="Web Design"
-                    // description="Clean, modern landing page highlighting app features and download options."
-                    imageSrc="/images/landingpages/Gq1lTLBXUAE8qNf.jpeg"
-                  />
-                </div>
-                <div className="w-full h-[20rem] md:h-[50rem]">
-                  <ProjectCard
-                    // title="Digital Agency"
-                    // category="Web Design"
-                    // description="Creative agency website showcasing services and portfolio with animated elements."
-                    imageSrc="/images/landingpages/GqlEVV3WEAEEJ5Y.jpeg"
-                  />
-                </div>
+               
               </div>
             </div>
           </AnimateOnScroll>

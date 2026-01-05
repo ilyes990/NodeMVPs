@@ -10,33 +10,28 @@ import {
 export function FeaturesSectionWithHoverEffects() {
   const features = [
     {
-      title: "Speed Without Sacrificing Quality",
+      title: " Results-Driven",
       description:
-        "We don't just build fast — we build smart. Our 2-week sprint delivers launch-ready MVPs that are clean, scalable, and built to impress.",
+        "Every pixel is designed to increase conversions and sales.",
       icon: <IconAdjustmentsBolt />,
     },
     {
-      title: "Fixed Price, No Surprises",
+      title: " Fast Delivery",
       description:
-        "You know exactly what you'll pay upfront. for any SaaS or mobile MVP no hidden fees, no scope creep.",
+        "Pixel-perfect interfaces delivered in weeks, not months.  ",
       icon: <IconCurrencyDollar />,
     },
     {
-      title: "Built for Founders, by Founders",
+      title: " User-Focused",
       description:
-        "We've been in your shoes. We know how important momentum is in the early days. That's why we built a process that cuts through fluff and gets you results, fast.",
+        "Clean, intuitive experiences that your customers actually enjoy using.",
       icon: <IconTerminal2 />,
     },
     {
-      title: "Real Results, Real Products",
-      description: "From AI tools to subscription trackers, we've helped founders go from idea to launch in just weeks, not months.",
+      title: " Proven Impact",
+      description: "We track what matters: higher engagement, more leads, bigger revenue.",
       icon: <IconCloud />,
     },
-    {
-      title: "Full Ownership, Zero Lock-In",
-      description: "You own 100% of your code. No vendor lock-in. No strings attached.",
-      icon: <IconRouteAltLeft />,
-    }
   ];
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto">

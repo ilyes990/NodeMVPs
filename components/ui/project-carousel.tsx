@@ -9,14 +9,12 @@ interface ProjectImage {
 }
 
 const projectImages: ProjectImage[] = [
-  { src: "/images/dream_to_plan.png", alt: "Dream-to-plan MVP" },
-  { src: "/images/docuAlert.jpg", alt: "DocuAlert MVP" },
-  { src: "/images/crm.jpg", alt: "WebAgency CRM" },
-  { src: "/images/mvp/Group 32.png", alt: "AdvenHive MVP" },
-  { src: "/images/mvp/GqqCNRjW4AAcp5x.jpeg", alt: "Peeps MVP" },
-  { src: "/images/landingpages/GovmrrfXcAAQy0z.jpeg", alt: "SaaS Product Landing Page" },
-  { src: "/images/landingpages/Gq1lTLBXUAE8qNf.jpeg", alt: "Mobile App Landing Page" },
-  { src: "/images/landingpages/GqlEVV3WEAEEJ5Y.jpeg", alt: "Digital Agency Landing Page" },
+  { src: "/images/designs/design1.png", alt: "Dream-to-plan MVP" },
+  { src: "/images/designs/design2.png", alt: "DocuAlert MVP" },
+  { src: "/images/designs/design3.png", alt: "WebAgency CRM" },
+  { src: "/images/designs/design4.png", alt: "AdvenHive MVP" },
+  { src: "/images/designs/design5.png", alt: "Peeps MVP" },
+  { src: "/images/designs/design6.png", alt: "SaaS Product Landing Page" },
 ];
 
 export function ProjectCarousel() {
@@ -27,7 +25,7 @@ export function ProjectCarousel() {
     if (!container) return;
 
     let scrollPosition = 0;
-    const scrollSpeed = 0.5; // pixels per frame
+    const scrollSpeed = 1; // pixels per frame
     let animationFrameId: number;
     let isPaused = false;
 
