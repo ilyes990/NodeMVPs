@@ -1,7 +1,6 @@
 import Footer from "@/components/footer";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Instrument_Serif, Halant } from "next/font/google";
 import { ReactNode } from "react";
 import Navbar from "../components/navbar";
 import "./font-optimization.css";
@@ -41,22 +40,6 @@ const poppinsFont = localFont({
   preload: true,
 });
 
-// Google Fonts
-const instrumentSerif = Instrument_Serif({
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal', 'italic'],
-  variable: '--font-instrument-serif',
-  display: 'swap',
-});
-
-const halant = Halant({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-halant',
-  display: 'swap',
-});
-
 export const metadata: Metadata = {
   title: "Veyronix | Build. Launch. Grow.",
   description: "Turning ideas into reality with mobile apps, landing pages, and UI/UX design.",
@@ -69,9 +52,15 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en" className={`${poppinsFont.variable} ${instrumentSerif.variable} ${halant.variable} font-sans`} suppressHydrationWarning>
+    <html lang="en" className={`${poppinsFont.variable} font-sans`} suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="transparent" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+          rel="stylesheet"
+        />
         <link
           rel="preload"
           href="/fonts/Poppins-Regular.woff2"

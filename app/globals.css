@@ -4,6 +4,9 @@
 
 @layer base {
   :root {
+    --font-halant: 'Halant', serif;
+    --font-instrument-serif: 'Instrument Serif', serif;
+    
     --background: transparent;
     --foreground: 0 0% 3.9%;
 
@@ -102,12 +105,12 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(234, 179, 8, 0.5);
+  background: rgba(4, 151, 255, 0.5);
   border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(234, 179, 8, 0.8);
+  background: rgba(4, 151, 255, 0.8);
 }
 
 .bg-gradient-to-br {

@@ -1,34 +1,29 @@
 import { cn } from "@/lib/utils";
-import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconTerminal2,
-} from "@tabler/icons-react";
+import Image from "next/image";
 
 export function FeaturesSectionWithHoverEffects() {
   const features = [
     {
-      title: " Results-Driven",
+      title: "Results-Driven",
       description: "Every pixel is designed to increase conversions and sales.",
-      icon: <IconAdjustmentsBolt />,
+      iconSrc: "/iconimages/result-driven.png",
     },
     {
-      title: " Fast Delivery",
-      description: "Pixel-perfect interfaces delivered in weeks, not months.  ",
-      icon: <IconCurrencyDollar />,
+      title: "Fast Delivery",
+      description: "Pixel-perfect interfaces delivered in weeks, not months.",
+      iconSrc: "/iconimages/fast-delibery.png",
     },
     {
-      title: " User-Focused",
+      title: "User-Focused",
       description:
         "Clean, intuitive experiences that your customers actually enjoy using.",
-      icon: <IconTerminal2 />,
+      iconSrc: "/iconimages/userfocused.png",
     },
     {
-      title: " Proven Impact",
+      title: "Proven Impact",
       description:
         "We track what matters: higher engagement, more leads, bigger revenue.",
-      icon: <IconCloud />,
+      iconSrc: "/iconimages/provenimpact.png",
     },
   ];
   return (
@@ -43,12 +38,12 @@ export function FeaturesSectionWithHoverEffects() {
 const Feature = ({
   title,
   description,
-  icon,
+  iconSrc,
   index,
 }: {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  iconSrc: string;
   index: number;
 }) => {
   return (
@@ -65,7 +60,15 @@ const Feature = ({
       {index >= 4 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-[#0497ff]">{icon}</div>
+      <div className="mb-4 relative z-10 px-10">
+        <Image
+          src={iconSrc}
+          alt={title}
+          width={60}
+          height={60}
+          className="w-20 h-20 object-contain"
+        />
+      </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
         <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-white/20 group-hover/feature:bg-[#0497ff] transition-all duration-200 origin-center" />
         <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-white">
