@@ -5,10 +5,11 @@ import { LiquidGlass } from "@/components/core/liquid-glass";
 import { TextShimmer } from "@/components/core/text-shimmer";
 import { ProjectCard } from "@/components/project-card";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects";
+import FounderSection from "@/components/ui/founderseciton";
+import PricingSection from "@/components/ui/pricing_section";
 import { ProjectCarousel } from "@/components/ui/project-carousel";
-import { ArrowUp, Calendar, Check } from "lucide-react";
+import { Calendar } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -269,198 +270,11 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 px-8" id="pricing">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-5xl font-light mb-16 bg-gradient-to-r from-white to-[#0497ff] bg-clip-text text-transparent"style={{ fontFamily: "var(--font-halant)" }}  >
-              Our Pricing
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Transparent pricing options tailored to your specific needs and
-              goals
-            </p>
-          </div>
+      <PricingSection />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* MVP Development */}
-            <Card className="bg-white border border-gray-200 hover:border-[#0497ff] transition-all duration-300 flex flex-col h-full shadow-lg relative">
-              <div className="absolute top-0 right-0">
-                <div className="bg-[#0497ff] text-white font-semibold py-1 px-4 text-sm transform rotate-45 translate-x-2 translate-y-3 shadow-lg">
-                  Popular
-                </div>
-              </div>
-              <CardContent className="p-8 flex flex-col flex-grow">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-gray-900"style={{ fontFamily: "var(--font-halant)" }} >
-                    MVP Development Package
-                  </h3>
-                  <div className="mb-6">
-                    <span className="text-gray-600 text-sm">Starting at</span>
-                    <div className="text-4xl font-bold text-[#0497ff]">
-                      $1,200
-                    </div>
-                  </div>
-                  <p className="text-[#0497ff] font-medium mb-6">
-                    Limited availability - Only 3 spots this month.
-                  </p>
-                </div>
-
-                <div className="flex-grow mb-8">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                    What You Get:
-                  </h4>
-                  <ul className="space-y-3">
-                    {[
-                      "Fully developed MVP in just 4–5 weeks",
-                      "Web app or Android mobile app (Android only)",
-                      "Modern, scalable tech stack tailored to your idea",
-                      "Built-in integrations: payments, authentication, and more",
-                      "Direct collaboration with the founder (me)",
-                      "Transparent process with frequent updates",
-                    ].map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                        <Check className="h-5 w-5 text-[#0497ff] mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <a
-                  href="https://calendly.com/ilyes-sissaoui/30min"
-                  className="mt-auto"
-                >
-                  <Button className="w-full bg-[#0497ff] hover:bg-[#0380d9] text-white font-semibold py-5 rounded-lg">
-                    Get Started
-                    <ArrowUp className="ml-2 h-4 w-4" />
-                  </Button>
-                </a>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-blue-950 bg-opacity-70 border border-blue-800/30 backdrop-blur-sm hover:border-[#0497ff] transition-all duration-300 flex flex-col h-full">
-              <CardContent className="p-8 flex flex-col flex-grow">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-white">
-                    Growth Retainer
-                  </h3>
-                  <div className="mb-6">
-                    <div className="text-4xl font-bold text-[#0497ff]">
-                      $1,350
-                      <span className="text-lg font-normal text-gray-300">
-                        /month
-                      </span>
-                    </div>
-                    <span className="text-gray-400 text-sm">
-                      Cancel anytime, no long-term commitment
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex-grow mb-8">
-                  <h4 className="text-lg font-semibold text-white mb-4">
-                    What&apos;s Included:
-                  </h4>
-                  <ul className="space-y-3">
-                    {[
-                      "60 development hours/month, fully dedicated to your product",
-                      "Flexible use of hours across tasks and priorities",
-                      "Weekly strategy sessions to align on goals and roadmap",
-                      "Priority on feature development that moves the needle",
-                      "Ongoing maintenance & performance tuning",
-                      "Same-day emergency support when it matters most",
-                    ].map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                        <Check className="h-5 w-5 text-[#0497ff] mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <a
-                  href="https://calendly.com/ilyes-sissaoui/30min"
-                  className="mt-auto"
-                >
-                  <Button className="w-full bg-[#0497ff] hover:bg-[#0380d9] text-white font-semibold py-5 rounded-lg">
-                    Get Started
-                    <ArrowUp className="ml-2 h-4 w-4" />
-                  </Button>
-                </a>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-300 mb-6">
-              Need a custom solution? Contact us for a personalized quote
-              tailored to your specific requirements.
-            </p>
-            <a href="https://wa.me/213674130077">
-              <Button
-                variant="outline"
-                className="border-[#0497ff] text-[#0497ff] hover:bg-[#0497ff]/10 px-8 py-4 rounded-full"
-              >
-                Get Custom Quote
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* Meet The Founder Section */}
-      <section className="py-20 px-8" id="founder">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Meet The{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#0497ff]">
-                Founder
-              </span>
-            </h2>
-          </div>
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <AnimateOnScroll>
-              <div className="w-64 h-64 relative rounded-full overflow-hidden border-4 border-[#0497ff]">
-                <Image
-                  src="/images/newimage.jpg"
-                  alt="Ilyes - Founder of Veyronix"
-                  fill
-                  className="object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </AnimateOnScroll>
-            <AnimateOnScroll>
-              <div className="flex-1 max-w-2xl">
-                <p className="text-xl text-gray-300 mb-6">
-                  Hey, I&apos;m Ilyes, I run Veyronix, a design and development
-                  studio where we help early-stage founders shape their ideas
-                  into real products. From the first sketches to a clean,
-                  working MVP and the landing page that sells it, we handle it
-                  all with care.
-                </p>
-                <p className="text-xl text-gray-300 mb-6">
-                  I only take on 3 clients a month so I can stay involved and
-                  make sure every detail gets the attention it deserves.
-                </p>
-                <p className="text-xl text-gray-300">
-                  If you&apos;re building something and want a partner who gets
-                  both the design and the code, let&apos;s talk.
-                </p>
-                <div className="mt-8">
-                  <a href="https://calendly.com/ilyes-sissaoui/30min">
-                    <Button className="bg-[#0497ff] hover:bg-[#0380d9] text-white font-semibold px-8 py-6 text-lg rounded-full">
-                      Schedule a Call
-                      <Calendar className="ml-2 h-5 w-5" />
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </div>
-      </section>
+     <FounderSection />
     </main>
   );
 }
