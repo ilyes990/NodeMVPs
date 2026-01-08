@@ -48,7 +48,7 @@ export default function FounderSection() {
 
             <div className="space-y-6 text-zinc-400 font-light text-lg md:text-xl leading-relaxed">
               <p>
-                Hey, I'm Ilyes. I run Veyronix, a design and development studio where we 
+                Hey, I&apos;m Ilyes. I run Veyronix, a design and development studio where we 
                 transform raw ideas into market-ready digital products. 
               </p>
               <p>
@@ -56,8 +56,8 @@ export default function FounderSection() {
                 personally involved in every pixel of your design and every line of your Framer site.
               </p>
               <p>
-                If you're looking for a partner who bridges the gap between high-end 
-                aesthetics and clean execution, let's build something together.
+                If you&apos;re looking for a partner who bridges the gap between high-end 
+                aesthetics and clean execution, let&apos;s build something together.
               </p>
             </div>
 
